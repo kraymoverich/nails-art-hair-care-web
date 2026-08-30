@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<title>Propuesta digital — Nails Art &amp; Hair Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@page{size:letter;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --tinta:#27190C; --t70:rgba(39,25,12,.72); --t45:rgba(39,25,12,.45); --t12:rgba(39,25,12,.13);
+  --fucsia:#EC55AA; --fucsiaD:#C33383; --crema:#F8F4EF; --crema2:#F1E9E0; --nude:#D8C4B4;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',Helvetica,Arial,sans-serif;
+}
+body{font-family:var(--sans);font-weight:300;color:var(--tinta);background:#fff;
+  font-size:10.5pt;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:8.5in;height:11in;padding:0.72in 0.8in;position:relative;overflow:hidden;
+  page-break-after:always;background:var(--crema)}
+.page:last-child{page-break-after:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:30pt;margin-bottom:6pt}
+h3{font-size:14pt;margin-bottom:3pt}
+.eyebrow{font-size:7pt;letter-spacing:.26em;text-transform:uppercase;font-weight:500;
+  color:var(--fucsiaD);margin-bottom:9pt}
+.lead{font-size:11.5pt;color:var(--t70);line-height:1.55}
+.rule{height:1px;background:var(--t12);margin:16pt 0}
+.foot{position:absolute;left:.8in;right:.8in;bottom:.42in;display:flex;justify-content:space-between;
+  font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:var(--t45);
+  border-top:1px solid var(--t12);padding-top:7pt}
+
+/* ---------- portada ---------- */
+.cover{background:var(--tinta);color:var(--crema);display:flex;flex-direction:column;justify-content:space-between}
+.cover .logo{width:2.5in;filter:invert(1) brightness(1.9) saturate(0)}
+.cover h1{font-size:46pt;line-height:1.02;margin:0 0 14pt}
+.cover h1 em{font-style:italic;color:var(--fucsia)}
+.cover .sub{font-size:12pt;color:rgba(248,244,239,.62);max-width:5in}
+.cover .meta{display:flex;gap:.5in;border-top:1px solid rgba(248,244,239,.2);padding-top:14pt}
+.cover .meta div{font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,244,239,.45)}
+.cover .meta b{display:block;font-family:var(--serif);font-size:14pt;font-weight:400;
+  letter-spacing:0;text-transform:none;color:var(--crema);margin-top:3pt}
+.cover .tag{display:inline-block;background:var(--fucsia);color:#fff;font-size:7pt;
+  letter-spacing:.2em;text-transform:uppercase;padding:5pt 11pt;margin-bottom:20pt}
+
+/* ---------- bloques ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16pt}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12pt}
+.card{background:#fff;padding:14pt 15pt;border-left:2px solid var(--fucsia)}
+.card h3{font-size:12.5pt}
+.card p{font-size:9.5pt;color:var(--t70);line-height:1.5}
+.box{background:#fff;padding:15pt 17pt}
+.box.dark{background:var(--tinta);color:var(--crema)}
+.box.dark p{color:rgba(248,244,239,.7)}
+.box.dark h3{color:var(--crema)}
+
+ul.check{list-style:none}
+ul.check li{padding:6pt 0 6pt 20pt;position:relative;border-bottom:1px solid var(--t12);font-size:10pt}
+ul.check li:before{content:"✓";position:absolute;left:0;color:var(--fucsiaD);font-size:10pt}
+ul.check li b{font-weight:500}
+ul.gap li:before{content:"○";color:var(--t45)}
+
+table{width:100%;border-collapse:collapse;font-size:9.5pt}
+th{text-align:left;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--t45);font-weight:500;padding:7pt 8pt;border-bottom:1px solid var(--t12)}
+td{padding:9pt 8pt;border-bottom:1px solid var(--t12);vertical-align:top}
+td b{font-weight:500}
+td.n{font-family:var(--serif);font-size:13pt;color:var(--fucsiaD);width:34pt}
+tr.on td{background:#fff}
+
+.fase{display:flex;gap:12pt;padding:11pt 0;border-bottom:1px solid var(--t12)}
+.fase .num{font-family:var(--serif);font-size:22pt;color:var(--nude);line-height:1;width:38pt;flex:none}
+.fase h3{font-size:12.5pt;margin-bottom:2pt}
+.fase p{font-size:9.5pt;color:var(--t70);line-height:1.5}
+.fase .estado{font-size:6.5pt;letter-spacing:.16em;text-transform:uppercase;padding:3pt 7pt;
+  align-self:flex-start;white-space:nowrap;flex:none}
+.listo{background:#e4f5ec;color:#1f7a4d}
+.sig{background:var(--crema2);color:var(--t45)}
+
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10pt;margin:14pt 0}
+.kpi div{background:#fff;padding:12pt}
+.kpi b{display:block;font-family:var(--serif);font-size:24pt;color:var(--fucsiaD);line-height:1}
+.kpi span{font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--t45);
+  display:block;margin-top:5pt;line-height:1.4}
+
+.captura{width:100%;border:1px solid var(--t12);margin-top:12pt}
+.nota{font-size:8.5pt;color:var(--t45);font-style:italic;margin-top:7pt}
+.cta{background:var(--fucsia);color:#fff;padding:18pt 20pt;margin-top:16pt}
+.cta h3{color:#fff;font-size:16pt}
+.cta p{font-size:10pt;opacity:.94}
+a{color:var(--fucsiaD);text-decoration:none}
+.url{font-family:var(--serif);font-size:15pt;color:var(--tinta);border-bottom:2px solid var(--fucsia);
+  padding-bottom:2pt;display:inline-block}
+</style>
+</head>
+<body>
+
+<!-- ============== PORTADA ============== -->
+<section class="page cover">
+  <div>
+    <img class="logo" src="../assets/img/logo.webp" alt="">
+  </div>
+  <div>
+    <span class="tag">Propuesta digital · 2026</span>
+    <h1>Que reservar<br>sea tan fácil<br><em>como llegar.</em></h1>
+    <p class="sub">Sitio web con reserva en línea, confirmación por QR y un plan de promoción
+    para Nails Art &amp; Hair Care, ARTZ Pedregal.</p>
+  </div>
+  <div class="meta">
+    <div>Para<b>Nails Art &amp; Hair Care</b></div>
+    <div>Ubicación<b>ARTZ Pedregal · Local 236</b></div>
+    <div>Fecha<b>Agosto 2026</b></div>
+  </div>
+</section>
+
+<!-- ============== 1. DIAGNÓSTICO ============== -->
+<section class="page">
+  <p class="eyebrow">01 · Dónde están hoy</p>
+  <h2>Un salón fuerte<br>con una puerta digital cerrada</h2>
+  <p class="lead">Esto es lo que encontramos revisando su Facebook, su Instagram y lo que
+  aparece de ustedes en internet. Nada aquí es suposición.</p>
+
+  <div class="rule"></div>
+
+  <h3 style="margin-bottom:8pt">Lo que ya tienen a favor</h3>
+  <ul class="check">
+    <li><b>Marca definida.</b> Logo, tono y una promesa clara: “Tu cabello &amp; uñas merecen lo mejor”.</li>
+    <li><b>Líneas premium.</b> AVEDA, TRUSS, K18 y GLOSSOVER — argumento de venta que casi nadie tiene alrededor.</li>
+    <li><b>Ubicación de alto valor.</b> ARTZ Pedregal: público con capacidad de compra y flujo constante.</li>
+    <li><b>Contenido constante.</b> Publican trabajos reales, productos y servicios nuevos.</li>
+    <li><b>Catálogo que ya creció.</b> Uñas, color, tratamientos, corte y faciales en un solo lugar.</li>
+  </ul>
+
+  <div class="rule"></div>
+
+  <h3 style="margin-bottom:8pt">Lo que hoy los está frenando</h3>
+  <ul class="check gap">
+    <li><b>No tienen sitio web.</b> Quien los busca en Google no encuentra una página suya: encuentra fichas de terceros.</li>
+    <li><b>Toda cita depende de que alguien conteste.</b> Teléfono y WhatsApp en horario de salón. Fuera de ese horario, la clienta se va con quien sí la deje reservar.</li>
+    <li><b>Sus precios no están publicados</b> en ningún canal. La clienta que compara, no los puede comparar.</li>
+    <li><b>Hay una ficha suya en Fresha que ustedes no controlan.</b> La creó un tercero, dice “sin afiliación”, y muestra salones de la competencia justo debajo de su información.</li>
+    <li><b>Cero reseñas públicas en Facebook</b> y ningún sistema para pedirlas después del servicio.</li>
+    <li><b>No hay base de datos de clientas.</b> Sin historial no hay recordatorios, ni cumpleaños, ni recuperación de quien dejó de venir.</li>
+  </ul>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>01</span></div>
+</section>
+
+<!-- ============== 2. LA PÁGINA (YA CONSTRUIDA) ============== -->
+<section class="page">
+  <p class="eyebrow">02 · Lo que ya está construido</p>
+  <h2>No es una idea.<br>Ya está en línea.</h2>
+  <p class="lead">Construimos la página con su marca, sus servicios reales, sus horarios reales
+  y sus fotos. Se puede abrir y usar hoy mismo desde cualquier celular.</p>
+
+  <div style="margin:16pt 0 6pt">
+    <p style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:var(--t45);margin-bottom:6pt">Véanla aquí</p>
+    <span class="url" id="URL_SITIO">[URL del sitio]</span>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Reserva en línea, 24/7</h3>
+      <p>Cuatro pasos: servicio, especialista, día y hora, datos. La agenda solo ofrece horarios
+      dentro de su horario real de atención — lunes a viernes 9 a 19, sábado 9 a 17, domingo 11 a 17.</p>
+    </div>
+    <div class="card">
+      <h3>La clienta llega con su QR</h3>
+      <p>Al confirmar recibe un código QR con folio único. Lo presenta en recepción y su cita
+      aparece al instante: sin buscar en la libreta, sin preguntar el apellido.</p>
+    </div>
+    <div class="card">
+      <h3>Catálogo completo</h3>
+      <p>Uñas, cabello y faciales separados por categoría, con duración estimada de cada servicio
+      y espacio listo para sus precios en cuanto nos los pasen.</p>
+    </div>
+    <div class="card">
+      <h3>Todo desemboca en WhatsApp</h3>
+      <p>Botón fijo en pantalla y envío de la cita ya redactada a su WhatsApp. La clienta que
+      prefiere escribir, escribe; la que prefiere reservar sola, reserva sola.</p>
+    </div>
+    <div class="card">
+      <h3>Su marca, no una plantilla</h3>
+      <p>Logo, tipografía y colores tomados de sus propios materiales. Sus fotos de trabajos
+      reales en la galería. Se ve como ustedes, no como un sitio genérico.</p>
+    </div>
+    <div class="card">
+      <h3>Hecha para el celular</h3>
+      <p>La mayoría va a entrar desde Instagram en el teléfono. La página está construida
+      pensando primero en esa pantalla, y carga en menos de un segundo.</p>
+    </div>
+  </div>
+
+  <p class="nota">Los precios aparecen como “a confirmar” porque no están publicados en ninguno de sus
+  canales. En cuanto nos pasen la lista, se cargan y quedan visibles en el catálogo y en la reserva.</p>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>02</span></div>
+</section>
+
+<!-- ============== 3. ROADMAP ============== -->
+<section class="page">
+  <p class="eyebrow">03 · Hasta dónde puede llegar</p>
+  <h2>De página<br>a sistema del salón</h2>
+  <p class="lead">La página de hoy es la base. Sobre ella se construye, por etapas, todo lo que
+  hoy se hace a mano o simplemente no se hace.</p>
+
+  <div style="margin-top:14pt">
+    <div class="fase">
+      <span class="num">01</span>
+      <div><h3>Sitio con reserva y QR</h3>
+      <p>Página pública, catálogo, agenda en línea, confirmación con código QR y salida a WhatsApp.</p></div>
+      <span class="estado listo">Entregado</span>
+    </div>
+
+    <div class="fase">
+      <span class="num">02</span>
+      <div><h3>Panel de recepción</h3>
+      <p>La agenda real del salón en una pantalla: citas del día, escaneo del QR de la clienta,
+      confirmación automática por WhatsApp al reservar y recordatorio 24 horas antes.
+      Es lo que baja las citas que no se presentan.</p></div>
+      <span class="estado sig">Siguiente</span>
+    </div>
+
+    <div class="fase">
+      <span class="num">03</span>
+      <div><h3>Seguimiento de clientas</h3>
+      <p>Ficha por clienta: qué se hizo, con quién, cuánto gastó y cuándo vino. El sistema avisa
+      quién lleva más de seis semanas sin volver y a quién le toca cumpleaños. Ahí es donde
+      está el dinero que hoy se pierde en silencio.</p></div>
+      <span class="estado sig">Fase 3</span>
+    </div>
+
+    <div class="fase">
+      <span class="num">04</span>
+      <div><h3>Códigos de descuento y paquetes</h3>
+      <p>Cupones de primera visita, código de referida (trae una amiga y las dos ganan),
+      paquetes prepagados de manicure y membresías mensuales. Todo con su código, y con el
+      reporte de cuánto vendió cada uno.</p></div>
+      <span class="estado sig">Fase 4</span>
+    </div>
+
+    <div class="fase">
+      <span class="num">05</span>
+      <div><h3>Convenios B2B</h3>
+      <p>Las oficinas, tiendas y consultorios de ARTZ Pedregal son clientes cautivos. Cada empresa
+      recibe su código corporativo con descuento, sus empleadas reservan desde la misma página y
+      ustedes ven cuánto factura cada convenio. Se suman tarjetas de regalo para regalos de
+      empresa y fechas fuertes.</p></div>
+      <span class="estado sig">Fase 5</span>
+    </div>
+
+    <div class="fase">
+      <span class="num">06</span>
+      <div><h3>App instalable</h3>
+      <p>La misma página convertida en app: se instala desde el navegador, sin App Store.
+      Notificaciones al celular de la clienta, tarjeta de sellos digital y su historial de citas
+      a la mano. Se hace cuando las fases 2 y 3 ya estén dando datos.</p></div>
+      <span class="estado sig">Fase 6</span>
+    </div>
+  </div>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>03</span></div>
+</section>
+
+<!-- ============== 4. PAUTA Y PROMOCIÓN ============== -->
+<section class="page">
+  <p class="eyebrow">04 · Pauta y promoción</p>
+  <h2>Llenar la agenda,<br>no juntar seguidores</h2>
+  <p class="lead">Publicar bonito no llena sillas. Lo que llena sillas es que alguien que está a
+  cinco minutos vea el anuncio, entre a la página y reserve. Este es el orden en que lo haríamos.</p>
+
+  <div class="rule"></div>
+
+  <table>
+    <tr><th style="width:34pt">#</th><th>Acción</th><th style="width:1.55in">Por qué primero</th></tr>
+    <tr class="on"><td class="n">1</td>
+      <td><b>Perfil de Google del negocio</b><br>Reclamar y llenar la ficha: fotos, servicios,
+      horarios y el enlace a la página. Es gratis.</td>
+      <td>Es la búsqueda “salón de uñas cerca de mí”. Hoy esa búsqueda se la llevan otros.</td></tr>
+    <tr><td class="n">2</td>
+      <td><b>Reseñas automáticas</b><br>Después de cada cita, un mensaje pidiendo la reseña con
+      el enlace directo.</td>
+      <td>Hoy tienen cero opiniones públicas. Las reseñas son lo que decide entre dos salones.</td></tr>
+    <tr class="on"><td class="n">3</td>
+      <td><b>Meta Ads a 5 km</b><br>Anuncios en Instagram y Facebook alrededor de ARTZ Pedregal,
+      con sus fotos de antes/después y botón directo a reservar.</td>
+      <td>Público con poder de compra a minutos del salón. Se paga por clienta, no por alcance.</td></tr>
+    <tr><td class="n">4</td>
+      <td><b>Remarketing</b><br>Volver a impactar a quien entró a la página y no terminó de reservar.</td>
+      <td>Es el anuncio más barato que existe: ya la conocen, ya les interesó.</td></tr>
+    <tr class="on"><td class="n">5</td>
+      <td><b>Contenido con destino</b><br>Seguir publicando lo que ya publican, pero cada pieza
+      empujando al enlace de reserva.</td>
+      <td>Ya producen buen contenido. Hoy termina en un “me gusta”, no en una cita.</td></tr>
+    <tr><td class="n">6</td>
+      <td><b>WhatsApp Business ordenado</b><br>Catálogo, respuestas rápidas y mensaje de bienvenida
+      fuera de horario.</td>
+      <td>Es su canal real de venta. Hoy trabaja sin herramientas.</td></tr>
+    <tr class="on"><td class="n">7</td>
+      <td><b>Campaña de convenios</b><br>Visita y propuesta a los locales y oficinas de la plaza.</td>
+      <td>Volumen recurrente sin costo de pauta.</td></tr>
+  </table>
+
+  <div class="box dark" style="margin-top:16pt">
+    <h3>Todo se mide, o no se hace</h3>
+    <p style="margin-top:5pt">Cada campaña lleva su propio enlace. Al final del mes sabemos exactamente
+    cuántas citas trajo cada peso invertido — no “impresiones”, citas con nombre y folio.</p>
+  </div>
+
+  <div class="kpi">
+    <div><b>$</b><span>Costo por cita nueva</span></div>
+    <div><b>%</b><span>Ocupación de la agenda</span></div>
+    <div><b>↺</b><span>Clientas que regresan</span></div>
+    <div><b>Ø</b><span>Ticket promedio</span></div>
+  </div>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>04</span></div>
+</section>
+
+<!-- ============== 5. SIGUIENTE PASO ============== -->
+<section class="page">
+  <p class="eyebrow">05 · Siguiente paso</p>
+  <h2>Lo que necesitamos<br>de ustedes</h2>
+  <p class="lead">La página ya está de pie. Para dejarla lista para vender, sólo faltan cuatro cosas
+  que únicamente ustedes tienen.</p>
+
+  <div class="rule"></div>
+
+  <table>
+    <tr><th style="width:34pt">#</th><th>Lo que necesitamos</th><th style="width:1.4in">Para qué</th></tr>
+    <tr class="on"><td class="n">1</td><td><b>Lista de precios y servicios</b><br>Con la duración real de cada uno.</td>
+      <td>Cargar el catálogo y la agenda con tiempos correctos.</td></tr>
+    <tr><td class="n">2</td><td><b>Nombres del equipo</b><br>Quién hace qué (uñas, color, tratamiento, faciales).</td>
+      <td>Que la clienta pueda elegir con quién se atiende.</td></tr>
+    <tr class="on"><td class="n">3</td><td><b>Fotos en alta</b><br>Del local y de trabajos recientes.</td>
+      <td>Hoy la galería usa fotos tomadas de sus redes, en baja resolución.</td></tr>
+    <tr><td class="n">4</td><td><b>Decidir el dominio</b><br>Ej. nailsarthaircare.mx</td>
+      <td>Que la página viva en su propia dirección, no en una de prueba.</td></tr>
+  </table>
+
+  <div class="rule"></div>
+
+  <div class="grid2">
+    <div class="box">
+      <h3>Qué entregamos en fase 1</h3>
+      <ul class="check" style="margin-top:6pt">
+        <li>Página completa, en línea y en su dominio</li>
+        <li>Reserva en línea con confirmación por QR</li>
+        <li>Catálogo con sus precios cargados</li>
+        <li>Ficha de Google configurada</li>
+        <li>Capacitación de recepción (una sesión)</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Cómo trabajamos</h3>
+      <ul class="check" style="margin-top:6pt">
+        <li>Fase por fase: se aprueba una, se cobra una</li>
+        <li>Nada se lanza sin que ustedes lo vean antes</li>
+        <li>Reporte mensual de citas y de pauta</li>
+        <li>La página y los datos son de ustedes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>El siguiente paso es de 15 minutos</h3>
+    <p style="margin-top:5pt">Nos pasan la lista de precios y el nombre del equipo, y la página
+    queda lista para recibir su primera reserva real esta misma semana.</p>
+  </div>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>05</span></div>
+</section>
+
+</body>
+</html>
