@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nails Art &amp; Hair Care — Spa de uñas y cuidado capilar · ARTZ Pedregal</title>
+<meta name="description" content="Spa de uñas y especialistas en recuperación capilar en ARTZ Pedregal, segundo piso. Manicure, pedicure, color, tratamientos AVEDA, TRUSS y K18. Agenda tu cita en línea.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Paleta extraída de sus propios materiales:
+     tinta = tinta del logo · fucsia = portada de Facebook */
+  --tinta:#27190C;
+  --tinta-70:rgba(39,25,12,.70);
+  --tinta-45:rgba(39,25,12,.45);
+  --tinta-12:rgba(39,25,12,.12);
+  --fucsia:#EC55AA;
+  --fucsia-oscuro:#C33383;
+  --crema:#F8F4EF;
+  --crema-2:#F1E9E0;
+  --nude:#D8C4B4;
+  --blanco:#fff;
+  --radio:2px;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Jost','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --ancho:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--crema);color:var(--tinta);
+  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--ancho);margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
+  color:var(--fucsia-oscuro);margin-bottom:18px;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5vw,58px)}
+h3{font-size:24px}
+.lead{font-size:17px;color:var(--tinta-70);max-width:52ch}
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border:0;border-radius:var(--radio);cursor:pointer;
+  font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;text-decoration:none;transition:.25s ease;
+}
+.btn-p{background:var(--tinta);color:var(--crema)}
+.btn-p:hover{background:var(--fucsia)}
+.btn-g{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta-12)}
+.btn-g:hover{box-shadow:inset 0 0 0 1px var(--tinta);}
+.btn-wa{background:#25D366;color:#06331a}
+.btn-wa:hover{filter:brightness(1.06)}
+.btn:disabled{opacity:.3;cursor:not-allowed}
+
+/* ---------- nav ---------- */
+header{
+  position:sticky;top:0;z-index:60;background:rgba(248,244,239,.88);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--tinta-12);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav img{height:42px;width:auto}
+.nav nav{display:flex;gap:34px}
+.nav nav a{
+  text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tinta-70);transition:.2s;
+}
+.nav nav a:hover{color:var(--fucsia-oscuro)}
+.nav .btn{padding:12px 22px}
+@media(max-width:900px){.nav nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:80px 0 96px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,92px)}
+.hero h1 em{font-style:italic;color:var(--fucsia-oscuro)}
+.hero .lead{margin:26px 0 34px;font-size:19px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{
+  display:flex;gap:30px;margin-top:44px;padding-top:26px;
+  border-top:1px solid var(--tinta-12);flex-wrap:wrap;
+}
+.hero-meta div{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-45)}
+.hero-meta strong{display:block;font-family:var(--serif);font-size:26px;letter-spacing:0;
+  text-transform:none;color:var(--tinta);font-weight:400;margin-top:4px}
+.hero-fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
+.hero-fotos img{border-radius:var(--radio);object-fit:cover;width:100%}
+.hero-fotos img:first-child{height:420px;margin-top:56px}
+.hero-fotos img:last-child{height:470px}
+@media(max-width:900px){
+  .hero{padding:50px 0 64px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-fotos img:first-child{height:250px;margin-top:0}
+  .hero-fotos img:last-child{height:250px}
+}
+
+/* ---------- marcas ---------- */
+.marcas{background:var(--tinta);color:var(--crema);padding:34px 0}
+.marcas .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.marcas span{font-size:11px;letter-spacing:.26em;text-transform:uppercase;opacity:.5}
+.marcas ul{list-style:none;display:flex;gap:44px;flex-wrap:wrap}
+.marcas li{font-family:var(--serif);font-size:27px;letter-spacing:.06em}
+
+/* ---------- secciones ---------- */
+section{padding:104px 0}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head h2{margin-bottom:18px}
+
+/* ---------- servicios ---------- */
+.tabs{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.tab{
+  padding:12px 26px;border:0;background:transparent;cursor:pointer;
+  box-shadow:inset 0 0 0 1px var(--tinta-12);border-radius:var(--radio);
+  font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tinta-70);transition:.2s;
+}
+.tab[aria-selected=true]{background:var(--tinta);color:var(--crema);box-shadow:none}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;
+  background:var(--tinta-12);border:1px solid var(--tinta-12)}
+.svc{
+  background:var(--crema);padding:28px 26px;display:flex;flex-direction:column;
+  gap:8px;transition:.2s;
+}
+.svc:hover{background:var(--blanco)}
+.svc-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.svc h3{font-size:21px}
+.svc .precio{font-family:var(--serif);font-size:21px;white-space:nowrap;color:var(--fucsia-oscuro)}
+.svc .precio.pend{font-family:var(--sans);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-45);border:1px dashed var(--tinta-12);padding:5px 9px}
+.svc p{font-size:14px;color:var(--tinta-70);line-height:1.55}
+.svc .dur{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-45);margin-top:auto;padding-top:12px}
+.nota-precios{
+  margin-top:26px;padding:16px 20px;background:var(--crema-2);border-left:2px solid var(--fucsia);
+  font-size:13px;color:var(--tinta-70);
+}
+
+/* ---------- galería ---------- */
+.galeria{background:var(--crema-2)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal-grid figure{position:relative;overflow:hidden;border-radius:var(--radio);background:var(--nude)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.gal-grid figure:hover img{transform:scale(1.05)}
+.gal-grid figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;
+  background:linear-gradient(transparent,rgba(39,25,12,.78));color:#fff;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+}
+.g-alta{grid-row:span 2}
+.gal-grid figure{min-height:220px}
+.g-alta{min-height:454px}
+@media(max-width:900px){
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .g-alta{grid-row:span 1;min-height:220px}
+}
+
+/* ---------- reserva ---------- */
+.reserva{background:var(--tinta);color:var(--crema)}
+.reserva .eyebrow{color:var(--fucsia)}
+.reserva .lead{color:rgba(248,244,239,.68)}
+.booking{
+  background:var(--crema);color:var(--tinta);border-radius:var(--radio);
+  margin-top:48px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.28);
+}
+.pasos{display:flex;border-bottom:1px solid var(--tinta-12);background:var(--blanco)}
+.paso{
+  flex:1;padding:18px 10px;text-align:center;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--tinta-45);position:relative;transition:.25s;
+}
+.paso b{display:block;font-family:var(--serif);font-size:19px;letter-spacing:0;margin-bottom:3px;font-weight:400}
+.paso.on{color:var(--tinta)}
+.paso.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--fucsia)}
+.paso.done{color:var(--fucsia-oscuro)}
+.panel{padding:40px}
+.panel[hidden]{display:none}
+.panel h3{margin-bottom:6px}
+.panel .sub{font-size:14px;color:var(--tinta-70);margin-bottom:28px}
+.opciones{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.opt{
+  text-align:left;background:var(--blanco);border:0;cursor:pointer;padding:18px 20px;
+  box-shadow:inset 0 0 0 1px var(--tinta-12);border-radius:var(--radio);
+  font-family:var(--sans);transition:.2s;color:var(--tinta);
+}
+.opt:hover{box-shadow:inset 0 0 0 1px var(--nude)}
+.opt[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--fucsia);background:#fff}
+.opt strong{display:block;font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:3px}
+.opt small{font-size:12px;color:var(--tinta-45);letter-spacing:.06em}
+.cal{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+@media(max-width:820px){.cal{grid-template-columns:1fr;gap:28px}.panel{padding:26px 20px}}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-head strong{font-family:var(--serif);font-size:20px;font-weight:400;text-transform:capitalize}
+.cal-nav{background:transparent;border:0;cursor:pointer;font-size:19px;color:var(--tinta-70);padding:4px 10px}
+.cal-nav:hover{color:var(--fucsia)}
+.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.dow{font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:center;
+  color:var(--tinta-45);padding-bottom:6px}
+.dia{
+  aspect-ratio:1;border:0;background:var(--blanco);cursor:pointer;border-radius:var(--radio);
+  font-family:var(--sans);font-size:14px;color:var(--tinta);
+  box-shadow:inset 0 0 0 1px var(--tinta-12);transition:.15s;
+}
+.dia:hover:not(:disabled){box-shadow:inset 0 0 0 1px var(--nude)}
+.dia:disabled{opacity:.22;cursor:not-allowed;box-shadow:none;background:transparent}
+.dia[aria-pressed=true]{background:var(--tinta);color:var(--crema);box-shadow:none}
+.horas{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
+.hora{
+  padding:12px 4px;border:0;background:var(--blanco);cursor:pointer;border-radius:var(--radio);
+  box-shadow:inset 0 0 0 1px var(--tinta-12);font-family:var(--sans);font-size:14px;color:var(--tinta);transition:.15s;
+}
+.hora:hover:not(:disabled){box-shadow:inset 0 0 0 1px var(--nude)}
+.hora:disabled{opacity:.28;cursor:not-allowed;text-decoration:line-through}
+.hora[aria-pressed=true]{background:var(--fucsia);color:#fff;box-shadow:none}
+.vacio{font-size:14px;color:var(--tinta-45);padding:20px 0}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.campos{grid-template-columns:1fr}}
+label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tinta-45);margin-bottom:7px}
+input,textarea,select{
+  width:100%;padding:14px 16px;border:0;background:var(--blanco);
+  box-shadow:inset 0 0 0 1px var(--tinta-12);border-radius:var(--radio);
+  font-family:var(--sans);font-size:15px;color:var(--tinta);
+}
+input:focus,textarea:focus{outline:0;box-shadow:inset 0 0 0 2px var(--fucsia)}
+.ancho-full{grid-column:1/-1}
+.acciones{display:flex;justify-content:space-between;gap:12px;margin-top:32px;
+  padding-top:24px;border-top:1px solid var(--tinta-12);flex-wrap:wrap}
+.resumen{
+  background:var(--crema-2);padding:18px 22px;border-radius:var(--radio);margin-bottom:26px;
+  display:flex;gap:30px;flex-wrap:wrap;font-size:13px;
+}
+.resumen b{display:block;font-family:var(--serif);font-size:17px;font-weight:400;margin-top:2px}
+.resumen span{color:var(--tinta-45);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- ticket / QR ---------- */
+.ticket{display:grid;grid-template-columns:1fr 300px;gap:0;background:var(--blanco);
+  border-radius:var(--radio);overflow:hidden;box-shadow:inset 0 0 0 1px var(--tinta-12)}
+@media(max-width:760px){.ticket{grid-template-columns:1fr}}
+.ticket-info{padding:36px}
+.ticket-qr{
+  background:var(--tinta);color:var(--crema);padding:32px 24px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  border-left:2px dashed var(--tinta-12);
+}
+.ticket-qr canvas,.ticket-qr img{background:#fff;padding:12px;border-radius:var(--radio);width:190px;height:190px}
+.folio{font-family:var(--serif);font-size:22px;letter-spacing:.14em}
+.ticket-qr small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;line-height:1.7}
+.ok-badge{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:#1f7a4d;background:#e4f5ec;padding:8px 14px;border-radius:var(--radio);margin-bottom:20px}
+.detalle{list-style:none;margin:22px 0}
+.detalle li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;
+  border-bottom:1px solid var(--tinta-12);font-size:15px}
+.detalle li span{color:var(--tinta-45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  align-self:center}
+.detalle li b{font-weight:400;font-family:var(--serif);font-size:18px;text-align:right}
+
+/* ---------- ubicación ---------- */
+.ubica-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:900px){.ubica-grid{grid-template-columns:1fr;gap:36px}}
+.horario{list-style:none;margin:8px 0 30px}
+.horario li{display:flex;justify-content:space-between;padding:12px 0;
+  border-bottom:1px solid var(--tinta-12);font-size:15px}
+.horario li.hoy{color:var(--fucsia-oscuro);font-weight:400}
+.horario li.hoy::after{content:" hoy";font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  align-self:center;margin-left:10px;opacity:.7}
+.mapa{border:0;width:100%;height:400px;border-radius:var(--radio);
+  filter:grayscale(1) contrast(.95);background:var(--crema-2)}
+.contacto-lista{list-style:none;margin-top:26px}
+.contacto-lista li{padding:11px 0;border-bottom:1px solid var(--tinta-12);font-size:15px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.contacto-lista span{color:var(--tinta-45);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.contacto-lista a{text-decoration:none;border-bottom:1px solid var(--tinta-12)}
+.contacto-lista a:hover{color:var(--fucsia-oscuro)}
+
+/* ---------- cierre ---------- */
+.cierre{background:var(--fucsia);color:#fff;text-align:center}
+.cierre h2{margin-bottom:20px}
+.cierre p{max-width:46ch;margin:0 auto 34px;font-size:17px;opacity:.92}
+.cierre .btn-p{background:#fff;color:var(--tinta)}
+.cierre .btn-p:hover{background:var(--tinta);color:#fff}
+
+footer{background:var(--tinta);color:rgba(248,244,239,.62);padding:56px 0 30px;font-size:13px}
+footer img{height:52px;margin-bottom:22px;filter:invert(1) sepia(1) saturate(0) brightness(1.6)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--crema);margin-bottom:14px;font-weight:500}
+footer ul{list-style:none}
+footer li{padding:5px 0}
+footer a{text-decoration:none}
+footer a:hover{color:var(--fucsia)}
+.foot-bottom{border-top:1px solid rgba(248,244,239,.14);padding-top:22px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}
+
+/* ---------- wa flotante ---------- */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:70;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.24);
+  text-decoration:none;transition:.25s;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+.demo-tag{
+  position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);z-index:70;
+  writing-mode:vertical-rl;background:var(--tinta);color:var(--crema);
+  padding:14px 7px;font-size:9px;letter-spacing:.24em;text-transform:uppercase;
+}
+@media(max-width:900px){.demo-tag{display:none}}
+</style>
+</head>
+<body>
+
+<div class="demo-tag">Maqueta de propuesta · no es el sitio oficial</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img src="assets/img/logo.png" alt="Nails Art &amp; Hair Care"></a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#reservar">Reservar</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a class="btn btn-p" href="#reservar">Agendar cita</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">ARTZ Pedregal · Segundo piso</p>
+      <h1>Tu cabello &amp; uñas<br><em>merecen lo mejor</em></h1>
+      <p class="lead">Somos un spa de uñas y cuidado capilar dedicados a consentirte de pies a cabeza. Especialistas en recuperación capilar con AVEDA, TRUSS y K18.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#reservar">Reservar en línea</a>
+        <a class="btn btn-wa" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="hero-meta">
+        <div>Abierto <strong>7 días</strong></div>
+        <div>Citas al <strong>55 3869 0683</strong></div>
+        <div>Uñas · Cabello · Faciales <strong>Un solo lugar</strong></div>
+      </div>
+    </div>
+    <div class="hero-fotos">
+      <img src="assets/img/hero-manos.webp" alt="Manicure nude realizado en el salón">
+      <img src="assets/img/hero-cabello.webp" alt="Cabello tratado en el salón">
+    </div>
+  </div>
+</div>
+
+<!-- ============ MARCAS ============ -->
+<div class="marcas">
+  <div class="wrap">
+    <span>Trabajamos con</span>
+    <ul><li>AVEDA</li><li>TRUSS</li><li>K18</li><li>GLOSSOVER</li></ul>
+  </div>
+</div>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Carta de servicios</p>
+      <h2>De pies a cabeza,<br>en una sola visita</h2>
+      <p class="lead">Manos y pies, color y tratamiento capilar, y faciales. Elige la categoría para ver todo lo que hacemos.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-cat="unas">Uñas</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="cabello">Cabello</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="facial">Faciales</button>
+    </div>
+
+    <div class="svc-grid" id="svcGrid"></div>
+
+    <p class="nota-precios">
+      <strong>Nota para la administración:</strong> los precios no están publicados en sus redes,
+      así que quedaron como <em>“precio a confirmar”</em>. En cuanto nos pasen la lista, se cargan
+      y aparecen aquí y en el flujo de reserva. Las duraciones son estimadas y también se ajustan.
+    </p>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section id="trabajos" class="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Nuestro trabajo</p>
+      <h2>Resultados reales</h2>
+      <p class="lead">Trabajos hechos en el salón. Cada cita termina con el acabado, la forma y el tono que pediste.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="g-alta"><img src="assets/img/gal-nude.webp" alt="Manicure gel tono nude, forma almendra"><figcaption>Gel nude · almendra</figcaption></figure>
+      <figure><img src="assets/img/gal-blancas.webp" alt="Manicure blanco perlado"><figcaption>Blanco perlado</figcaption></figure>
+      <figure><img src="assets/img/gal-esmalte.webp" alt="Esmaltado color hueso"><figcaption>Esmaltado</figcaption></figure>
+      <figure><img src="assets/img/gal-rizado.webp" alt="Tratamiento de brillo y suavidad en cabello rizado"><figcaption>Brillo &amp; suavidad</figcaption></figure>
+      <figure><img src="assets/img/gal-k18.webp" alt="Tratamiento de recuperación capilar K18"><figcaption>Recuperación K18</figcaption></figure>
+      <figure class="g-alta"><img src="assets/img/gal-manity.webp" alt="Manity, sanitizante y protector UV"><figcaption>Manity · protector UV</figcaption></figure>
+      <figure><img src="assets/img/gal-truss.webp" alt="Illuminatte Oil de TRUSS"><figcaption>TRUSS Illuminatte</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESERVA ============ -->
+<section id="reservar" class="reserva">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Reserva en línea</p>
+      <h2>Agenda en menos<br>de un minuto</h2>
+      <p class="lead">Elige servicio, especialista y horario. Recibes un código QR: es tu cita. Lo presentas al llegar y recepción la abre al instante.</p>
+    </div>
+
+    <div class="booking">
+      <div class="pasos">
+        <div class="paso on" data-p="1"><b>01</b>Servicio</div>
+        <div class="paso" data-p="2"><b>02</b>Especialista</div>
+        <div class="paso" data-p="3"><b>03</b>Fecha y hora</div>
+        <div class="paso" data-p="4"><b>04</b>Tus datos</div>
+        <div class="paso" data-p="5"><b>05</b>Tu QR</div>
+      </div>
+
+      <!-- paso 1 -->
+      <div class="panel" data-panel="1">
+        <h3>¿Qué te vamos a hacer?</h3>
+        <p class="sub">Puedes agregar más servicios al llegar.</p>
+        <div class="opciones" id="optServicios"></div>
+        <div class="acciones"><span></span><button class="btn btn-p" data-next disabled>Continuar</button></div>
+      </div>
+
+      <!-- paso 2 -->
+      <div class="panel" data-panel="2" hidden>
+        <h3>¿Con quién?</h3>
+        <p class="sub">Si no tienes preferencia, te asignamos a quien esté libre a esa hora.</p>
+        <div class="opciones" id="optEspecialistas"></div>
+        <div class="acciones"><button class="btn btn-g" data-prev>Atrás</button><button class="btn btn-p" data-next disabled>Continuar</button></div>
+      </div>
+
+      <!-- paso 3 -->
+      <div class="panel" data-panel="3" hidden>
+        <h3>Elige día y hora</h3>
+        <p class="sub">Sólo aparecen días y horas dentro del horario del salón.</p>
+        <div class="cal">
+          <div>
+            <div class="cal-head">
+              <button class="cal-nav" id="mesPrev" aria-label="Mes anterior">&#8592;</button>
+              <strong id="mesLabel"></strong>
+              <button class="cal-nav" id="mesNext" aria-label="Mes siguiente">&#8594;</button>
+            </div>
+            <div class="dias" id="dowRow"></div>
+            <div class="dias" id="gridDias"></div>
+          </div>
+          <div>
+            <div class="cal-head"><strong id="horaLabel">Horarios</strong></div>
+            <div class="horas" id="gridHoras"><p class="vacio">Selecciona un día para ver los horarios libres.</p></div>
+          </div>
+        </div>
+        <div class="acciones"><button class="btn btn-g" data-prev>Atrás</button><button class="btn btn-p" data-next disabled>Continuar</button></div>
+      </div>
+
+      <!-- paso 4 -->
+      <div class="panel" data-panel="4" hidden>
+        <h3>Tus datos</h3>
+        <p class="sub">Para confirmarte la cita y mandarte el recordatorio.</p>
+        <div class="resumen" id="resumen"></div>
+        <div class="campos">
+          <div><label for="fNombre">Nombre completo</label><input id="fNombre" autocomplete="name" placeholder="Ana Martínez"></div>
+          <div><label for="fTel">WhatsApp</label><input id="fTel" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678"></div>
+          <div class="ancho-full"><label for="fMail">Correo <small style="text-transform:none;letter-spacing:0">(opcional)</small></label><input id="fMail" type="email" autocomplete="email" placeholder="ana@correo.com"></div>
+          <div class="ancho-full"><label for="fNota">Nota para tu especialista (opcional)</label><input id="fNota" placeholder="Traigo gel de hace 3 semanas, quiero retiro"></div>
+        </div>
+        <div class="acciones"><button class="btn btn-g" data-prev>Atrás</button><button class="btn btn-p" id="btnConfirmar" disabled>Confirmar cita</button></div>
+      </div>
+
+      <!-- paso 5 -->
+      <div class="panel" data-panel="5" hidden>
+        <div class="ticket">
+          <div class="ticket-info">
+            <div class="ok-badge">&#10003; Cita confirmada</div>
+            <h3 id="tkNombre">Tu cita</h3>
+            <p class="sub" style="margin-bottom:0">Te esperamos en ARTZ Pedregal, segundo piso, local 236.</p>
+            <ul class="detalle" id="tkDetalle"></ul>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn btn-wa" id="tkWa" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+              <button class="btn btn-g" id="tkIcs">Agregar al calendario</button>
+              <button class="btn btn-g" id="tkOtra">Agendar otra</button>
+            </div>
+          </div>
+          <div class="ticket-qr">
+            <div id="qrBox"></div>
+            <div class="folio" id="tkFolio"></div>
+            <small>Presenta este código<br>al llegar a recepción</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ UBICACIÓN ============ -->
+<section id="ubicacion">
+  <div class="wrap">
+    <div class="ubica-grid">
+      <div>
+        <p class="eyebrow">Visítanos</p>
+        <h2>ARTZ Pedregal,<br>segundo piso</h2>
+        <p class="lead" style="margin:18px 0 30px">Anillo Periférico 3720, Local 236, Jardines del Pedregal, Álvaro Obregón, CDMX, CP 01900.</p>
+
+        <h4 style="font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-45);margin-bottom:4px">Horarios</h4>
+        <ul class="horario" id="horarioLista"></ul>
+
+        <ul class="contacto-lista">
+          <li><span>Teléfono</span><a href="tel:+525538690683">55 3869 0683</a></li>
+          <li><span>Citas</span><a href="tel:+525526532946">55 2653 2946</a></li>
+          <li><span>WhatsApp</span><a href="https://wa.me/5215530823589" target="_blank" rel="noopener">55 3082 3589</a></li>
+          <li><span>Correo</span><a href="mailto:aveda.artz@gmail.com">aveda.artz@gmail.com</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/artznailsandhaircare/" target="_blank" rel="noopener">@artznailsandhaircare</a></li>
+        </ul>
+
+        <a class="btn btn-g" style="margin-top:26px" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=ARTZ+Pedregal+Anillo+Periferico+3720+Jardines+del+Pedregal+CDMX">Cómo llegar</a>
+      </div>
+      <div>
+        <iframe class="mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ARTZ Pedregal"
+          src="https://www.google.com/maps?q=Anillo%20Perif%C3%A9rico%203720%2C%20Jardines%20del%20Pedregal%2C%20CDMX&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="cierre">
+  <div class="wrap">
+    <h2>¿Lista para consentirte?</h2>
+    <p>Reserva en línea en un minuto, o escríbenos por WhatsApp y te apartamos el lugar.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-p" href="#reservar">Reservar en línea</a>
+      <a class="btn btn-wa" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="assets/img/logo.png" alt="Nails Art &amp; Hair Care">
+        <p>Spa de uñas y cuidado capilar.<br>Especialistas en recuperación capilar.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Manicure y pedicure</a></li>
+          <li><a href="#servicios">Uñas de gel y acrílico</a></li>
+          <li><a href="#servicios">Diseño de color</a></li>
+          <li><a href="#servicios">Tratamientos y corte</a></li>
+          <li><a href="#servicios">Faciales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+525538690683">55 3869 0683</a></li>
+          <li><a href="https://wa.me/5215530823589" target="_blank" rel="noopener">WhatsApp 55 3082 3589</a></li>
+          <li><a href="mailto:aveda.artz@gmail.com">aveda.artz@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/artznailsandhaircare/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>ARTZ Pedregal · Anillo Periférico 3720, Local 236 · CDMX</span>
+      <span>Maqueta de propuesta — sitio no oficial</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<script src="assets/js/qrcode.js"></script>
+<script>
+/* ============================================================
+   DATOS DEL NEGOCIO  (verificados en Facebook, Instagram y Fresha)
+   Para cargar precios reales: pon el número en `precio`.
+   ============================================================ */
+const HORARIO = {           // 0 = domingo … 6 = sábado
+  0:[11,17], 1:[9,19], 2:[9,19], 3:[9,19], 4:[9,19], 5:[9,19], 6:[9,17]
+};
+const NOMBRE_DIA = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+
+const SERVICIOS = [
+  // ---- UÑAS ----
+  {id:'mani',   cat:'unas', n:'Manicure',                 d:45,  precio:null, desc:'Limado, cutícula, hidratación y esmaltado tradicional.'},
+  {id:'pedi',   cat:'unas', n:'Pedicure',                 d:60,  precio:null, desc:'Spa de pies completo con exfoliación y esmaltado.'},
+  {id:'manipedi',cat:'unas',n:'Manicure y pedicure',      d:105, precio:null, desc:'Manos y pies en la misma visita, de pies a cabeza.'},
+  {id:'gel',    cat:'unas', n:'Uñas de gel',              d:75,  precio:null, desc:'Esmaltado en gel de larga duración sobre uña natural.'},
+  {id:'gelext', cat:'unas', n:'Extensiones de gel',       d:105, precio:null, desc:'Extensión con gel: forma, largo y acabado a tu gusto.'},
+  {id:'acril',  cat:'unas', n:'Uñas acrílicas',           d:105, precio:null, desc:'Acrílico resistente, ideal para largos y formas marcadas.'},
+  {id:'dip',    cat:'unas', n:'Dip powder',               d:75,  precio:null, desc:'Sistema en polvo, sin lámpara y con acabado natural.'},
+  {id:'art',    cat:'unas', n:'Nail art / diseño',        d:30,  precio:null, desc:'Diseño a mano, incrustaciones y detalles por uña.'},
+  {id:'retiro', cat:'unas', n:'Retiro de material',       d:30,  precio:null, desc:'Retiro seguro de gel, acrílico o dip sin dañar la uña.'},
+  {id:'manic',  cat:'unas', n:'Manicure caballero',       d:40,  precio:null, desc:'Limpieza, corte y pulido para manos de caballero.'},
+  {id:'pedic',  cat:'unas', n:'Pedicure caballero',       d:55,  precio:null, desc:'Cuidado completo de pies para caballero.'},
+  // ---- CABELLO ----  (publicados por ellos: "Nuevos servicios: diseño de color, tratamientos, corte")
+  {id:'color',  cat:'cabello', n:'Diseño de color',       d:150, precio:null, desc:'Balayage, mechas y tonos a medida con línea profesional.'},
+  {id:'retoque',cat:'cabello', n:'Retoque de raíz',       d:90,  precio:null, desc:'Cobertura de raíz manteniendo tu tono actual.'},
+  {id:'k18',    cat:'cabello', n:'Tratamiento K18',       d:60,  precio:null, desc:'Recuperación molecular para cabello dañado o decolorado.'},
+  {id:'truss',  cat:'cabello', n:'Tratamiento TRUSS',     d:60,  precio:null, desc:'Nutrición profunda y brillo con Illuminatte Oil.'},
+  {id:'aveda',  cat:'cabello', n:'Ritual AVEDA',          d:75,  precio:null, desc:'Diagnóstico y ritual capilar con productos AVEDA.'},
+  {id:'corte',  cat:'cabello', n:'Corte y peinado',       d:60,  precio:null, desc:'Corte a tu tipo de cara, secado y terminado.'},
+  {id:'peinado',cat:'cabello', n:'Peinado / brushing',    d:45,  precio:null, desc:'Terminado con cepillo secador para evento o diario.'},
+  // ---- FACIALES ----
+  {id:'facial', cat:'facial', n:'Facial de limpieza',     d:60,  precio:null, desc:'Limpieza profunda, exfoliación e hidratación.'},
+  {id:'facialh',cat:'facial', n:'Facial hidratante',      d:60,  precio:null, desc:'Rehidratación y luminosidad para piel apagada.'},
+  {id:'cejas',  cat:'facial', n:'Diseño de cejas',        d:30,  precio:null, desc:'Perfilado y diseño según tu rostro.'}
+];
+
+const ESPECIALISTAS = [
+  {id:'any',   n:'Quien esté disponible', s:'Te asignamos al llegar'},
+  {id:'unas',  n:'Especialista en uñas',  s:'Gel, acrílico y nail art'},
+  {id:'color', n:'Especialista en color', s:'Balayage, mechas y tono'},
+  {id:'trat',  n:'Especialista capilar',  s:'K18, TRUSS y AVEDA'}
+];
+
+const WA = '5215530823589';
+
+/* ============================================================
+   ESTADO
+   ============================================================ */
+const S = {paso:1, servicio:null, especialista:null, fecha:null, hora:null};
+
+/* ---------- catálogo ---------- */
+const grid = document.getElementById('svcGrid');
+function pintaCatalogo(cat){
+  grid.innerHTML = SERVICIOS.filter(s=>s.cat===cat).map(s=>`
+    <article class="svc">
+      <div class="svc-top">
+        <h3>${s.n}</h3>
+        ${s.precio!==null
+          ? `<div class="precio">$${s.precio}</div>`
+          : `<div class="precio pend">Precio a confirmar</div>`}
+      </div>
+      <p>${s.desc}</p>
+      <div class="dur">${s.d} min aprox.</div>
+    </article>`).join('');
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected','false'));
+  t.setAttribute('aria-selected','true');
+  pintaCatalogo(t.dataset.cat);
+}));
+pintaCatalogo('unas');
+
+/* ---------- horarios en la sección de ubicación ---------- */
+const hoy = new Date().getDay();
+document.getElementById('horarioLista').innerHTML = [1,2,3,4,5,6,0].map(d=>{
+  const [a,b] = HORARIO[d];
+  return `<li class="${d===hoy?'hoy':''}"><span>${NOMBRE_DIA[d]}</span><span>${a}:00 – ${b}:00</span></li>`;
+}).join('');
+
+/* ---------- paso 1: servicios ---------- */
+document.getElementById('optServicios').innerHTML = SERVICIOS.map(s=>`
+  <button class="opt" aria-pressed="false" data-id="${s.id}">
+    <strong>${s.n}</strong>
+    <small>${s.d} min · ${s.precio!==null?'$'+s.precio:'precio a confirmar'}</small>
+  </button>`).join('');
+
+/* ---------- paso 2: especialistas ---------- */
+document.getElementById('optEspecialistas').innerHTML = ESPECIALISTAS.map(e=>`
+  <button class="opt" aria-pressed="false" data-id="${e.id}">
+    <strong>${e.n}</strong><small>${e.s}</small>
+  </button>`).join('');
+
+function grupoSeleccion(cont, campo){
+  cont.addEventListener('click', ev=>{
+    const b = ev.target.closest('.opt'); if(!b) return;
+    cont.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    S[campo] = b.dataset.id;
+    if(campo==='servicio'){ S.fecha=null; S.hora=null; }
+    validar();
+  });
+}
+grupoSeleccion(document.getElementById('optServicios'),'servicio');
+grupoSeleccion(document.getElementById('optEspecialistas'),'especialista');
+
+/* ---------- paso 3: calendario ---------- */
+let cursor = new Date(); cursor.setDate(1);
+const DOW = ['D','L','M','M','J','V','S'];
+document.getElementById('dowRow').innerHTML = DOW.map(d=>`<div class="dow">${d}</div>`).join('');
+
+const iso = d => d.toISOString().slice(0,10);
+const hoyISO = iso(new Date());
+
+function pintaMes(){
+  const y = cursor.getFullYear(), m = cursor.getMonth();
+  document.getElementById('mesLabel').textContent =
+    cursor.toLocaleDateString('es-MX',{month:'long',year:'numeric'});
+  const primero = new Date(y,m,1).getDay();
+  const dias = new Date(y,m+1,0).getDate();
+  let html = '<div></div>'.repeat(primero);
+  for(let d=1; d<=dias; d++){
+    const f = new Date(y,m,d);
+    const s = iso(f);
+    const pasado = s < hoyISO;
+    html += `<button class="dia" data-f="${s}" ${pasado?'disabled':''}
+             aria-pressed="${S.fecha===s}">${d}</button>`;
+  }
+  document.getElementById('gridDias').innerHTML = html;
+}
+document.getElementById('mesPrev').onclick = ()=>{cursor.setMonth(cursor.getMonth()-1);pintaMes()};
+document.getElementById('mesNext').onclick = ()=>{cursor.setMonth(cursor.getMonth()+1);pintaMes()};
+pintaMes();
+
+document.getElementById('gridDias').addEventListener('click', ev=>{
+  const b = ev.target.closest('.dia'); if(!b || b.disabled) return;
+  S.fecha = b.dataset.f; S.hora = null;
+  pintaMes(); pintaHoras(); validar();
+});
+
+/* Slots simulados como ocupados — determinista por fecha, para que la demo
+   se vea como una agenda real y no como un salón vacío. */
+function ocupado(fechaISO, min){
+  let h = 0;
+  const k = fechaISO + '|' + min;
+  for(let i=0;i<k.length;i++){ h = (h*31 + k.charCodeAt(i)) % 100000; }
+  return h % 100 < 32;
+}
+function pintaHoras(){
+  const cont = document.getElementById('gridHoras');
+  if(!S.fecha){ cont.innerHTML = '<p class="vacio">Selecciona un día para ver los horarios libres.</p>'; return; }
+  const f = new Date(S.fecha + 'T12:00:00');
+  const [ini,fin] = HORARIO[f.getDay()];
+  const svc = SERVICIOS.find(s=>s.id===S.servicio);
+  const dur = svc ? svc.d : 60;
+  document.getElementById('horaLabel').textContent =
+    f.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'});
+
+  let html = '';
+  for(let m = ini*60; m + dur <= fin*60; m += 30){
+    const hh = String(Math.floor(m/60)).padStart(2,'0');
+    const mm = String(m%60).padStart(2,'0');
+    const t = `${hh}:${mm}`;
+    const libre = !ocupado(S.fecha, m);
+    html += `<button class="hora" data-h="${t}" ${libre?'':'disabled'}
+             aria-pressed="${S.hora===t}">${t}</button>`;
+  }
+  cont.innerHTML = html || '<p class="vacio">Ese día ya no alcanza el tiempo del servicio. Prueba otro día.</p>';
+}
+document.getElementById('gridHoras').addEventListener('click', ev=>{
+  const b = ev.target.closest('.hora'); if(!b || b.disabled) return;
+  S.hora = b.dataset.h; pintaHoras(); validar();
+});
+
+/* ---------- navegación de pasos ---------- */
+function irA(n){
+  S.paso = n;
+  document.querySelectorAll('.panel').forEach(p=>p.hidden = (+p.dataset.panel !== n));
+  document.querySelectorAll('.paso').forEach(p=>{
+    const i = +p.dataset.p;
+    p.classList.toggle('on', i===n);
+    p.classList.toggle('done', i<n);
+  });
+  if(n===4) pintaResumen();
+  document.querySelector('.booking').scrollIntoView({behavior:'smooth', block:'start'});
+  validar();
+}
+document.querySelectorAll('[data-next]').forEach(b=>b.onclick = ()=>irA(S.paso+1));
+document.querySelectorAll('[data-prev]').forEach(b=>b.onclick = ()=>irA(S.paso-1));
+
+function validar(){
+  const p = S.paso;
+  const panel = document.querySelector(`.panel[data-panel="${p}"]`);
+  if(!panel) return;
+  const next = panel.querySelector('[data-next]');
+  if(next){
+    next.disabled = (p===1 && !S.servicio) || (p===2 && !S.especialista)
+                 || (p===3 && !(S.fecha && S.hora));
+  }
+  if(p===3) pintaHoras.__ = 1;
+  const conf = document.getElementById('btnConfirmar');
+  const nom = document.getElementById('fNombre').value.trim();
+  const tel = document.getElementById('fTel').value.replace(/\D/g,'');
+  conf.disabled = !(nom.length>2 && tel.length>=10);
+}
+['fNombre','fTel'].forEach(id=>document.getElementById(id).addEventListener('input',validar));
+
+function fechaLarga(){
+  return new Date(S.fecha+'T12:00:00')
+    .toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'});
+}
+function pintaResumen(){
+  const s = SERVICIOS.find(x=>x.id===S.servicio);
+  const e = ESPECIALISTAS.find(x=>x.id===S.especialista);
+  document.getElementById('resumen').innerHTML = `
+    <div><span>Servicio</span><b>${s.n}</b></div>
+    <div><span>Con</span><b>${e.n}</b></div>
+    <div><span>Cuándo</span><b>${fechaLarga()} · ${S.hora}</b></div>
+    <div><span>Duración</span><b>${s.d} min</b></div>`;
+}
+
+/* ---------- confirmación + QR ---------- */
+let CITA = null;
+document.getElementById('btnConfirmar').onclick = ()=>{
+  const s = SERVICIOS.find(x=>x.id===S.servicio);
+  const e = ESPECIALISTAS.find(x=>x.id===S.especialista);
+  const folio = 'NAHC-' + Math.random().toString(36).slice(2,6).toUpperCase()
+                        + Math.random().toString(36).slice(2,4).toUpperCase();
+  CITA = {
+    folio,
+    nombre: document.getElementById('fNombre').value.trim(),
+    tel:    document.getElementById('fTel').value.trim(),
+    mail:   document.getElementById('fMail').value.trim(),
+    nota:   document.getElementById('fNota').value.trim(),
+    servicio: s.n, dur: s.d, especialista: e.n, fecha: S.fecha, hora: S.hora
+  };
+  // En producción esto viaja al backend; aquí queda local para la demo.
+  try{
+    const prev = JSON.parse(localStorage.getItem('nahc_citas')||'[]');
+    prev.push(CITA); localStorage.setItem('nahc_citas', JSON.stringify(prev));
+  }catch(_){}
+
+  document.getElementById('tkNombre').textContent = CITA.nombre;
+  document.getElementById('tkFolio').textContent = folio;
+  document.getElementById('tkDetalle').innerHTML = `
+    <li><span>Servicio</span><b>${CITA.servicio}</b></li>
+    <li><span>Con</span><b>${CITA.especialista}</b></li>
+    <li><span>Día</span><b>${fechaLarga()}</b></li>
+    <li><span>Hora</span><b>${CITA.hora} · ${CITA.dur} min</b></li>
+    <li><span>A nombre de</span><b>${CITA.nombre}</b></li>`;
+
+  // QR con los datos de la cita
+  const payload = [
+    'NAILS ART & HAIR CARE', 'Folio: '+folio, CITA.servicio,
+    CITA.fecha+' '+CITA.hora, CITA.nombre, 'Tel '+CITA.tel
+  ].join(' | ');
+  const qr = qrcode(0,'M'); qr.addData(payload); qr.make();
+  document.getElementById('qrBox').innerHTML = qr.createImgTag(6,0);
+
+  const msg = `Hola, confirmo mi cita en Nails Art & Hair Care%0A%0AFolio: ${folio}%0A${CITA.servicio}%0A${fechaLarga()} a las ${CITA.hora}%0AA nombre de ${CITA.nombre}`;
+  document.getElementById('tkWa').href = `https://wa.me/${WA}?text=${msg}`;
+
+  irA(5);
+};
+
+/* .ics para agregar al calendario */
+document.getElementById('tkIcs').onclick = ()=>{
+  if(!CITA) return;
+  const dt = s => s.replace(/[-:]/g,'');
+  const ini = new Date(CITA.fecha+'T'+CITA.hora+':00');
+  const fin = new Date(ini.getTime() + CITA.dur*60000);
+  const f = d => dt(d.toISOString().slice(0,19))+'Z';
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//NAHC//ES','BEGIN:VEVENT',
+    'UID:'+CITA.folio+'@nailsarthaircare',
+    'DTSTART:'+f(ini), 'DTEND:'+f(fin),
+    'SUMMARY:'+CITA.servicio+' — Nails Art & Hair Care',
+    'LOCATION:ARTZ Pedregal, Anillo Periferico 3720 Local 236, CDMX',
+    'DESCRIPTION:Folio '+CITA.folio+'. Presenta tu QR en recepcion.',
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+  a.download = CITA.folio+'.ics'; a.click(); URL.revokeObjectURL(a.href);
+};
+
+document.getElementById('tkOtra').onclick = ()=>{
+  S.servicio=S.especialista=S.fecha=S.hora=null;
+  document.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));
+  ['fNombre','fTel','fMail','fNota'].forEach(id=>document.getElementById(id).value='');
+  pintaMes(); pintaHoras(); irA(1);
+};
+</script>
+</body>
+</html>
