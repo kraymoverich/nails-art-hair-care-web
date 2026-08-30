@@ -42,18 +42,18 @@ h3{font-size:14pt;margin-bottom:3pt}
   letter-spacing:.2em;text-transform:uppercase;padding:5pt 11pt;margin-bottom:20pt}
 
 /* ---------- bloques ---------- */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16pt}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12pt}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12pt}
-.card{background:#fff;padding:14pt 15pt;border-left:2px solid var(--fucsia)}
-.card h3{font-size:12.5pt}
-.card p{font-size:9.5pt;color:var(--t70);line-height:1.5}
-.box{background:#fff;padding:15pt 17pt}
+.card{background:#fff;padding:10pt 12pt;border-left:2px solid var(--fucsia)}
+.card h3{font-size:11.5pt;margin-bottom:2pt}
+.card p{font-size:8.8pt;color:var(--t70);line-height:1.45}
+.box{background:#fff;padding:13pt 15pt}
 .box.dark{background:var(--tinta);color:var(--crema)}
 .box.dark p{color:rgba(248,244,239,.7)}
 .box.dark h3{color:var(--crema)}
 
 ul.check{list-style:none}
-ul.check li{padding:6pt 0 6pt 20pt;position:relative;border-bottom:1px solid var(--t12);font-size:10pt}
+ul.check li{padding:4.5pt 0 4.5pt 18pt;position:relative;border-bottom:1px solid var(--t12);font-size:10pt}
 ul.check li:before{content:"✓";position:absolute;left:0;color:var(--fucsiaD);font-size:10pt}
 ul.check li b{font-weight:500}
 ul.gap li:before{content:"○";color:var(--t45)}
@@ -61,7 +61,7 @@ ul.gap li:before{content:"○";color:var(--t45)}
 table{width:100%;border-collapse:collapse;font-size:9.5pt}
 th{text-align:left;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;
   color:var(--t45);font-weight:500;padding:7pt 8pt;border-bottom:1px solid var(--t12)}
-td{padding:9pt 8pt;border-bottom:1px solid var(--t12);vertical-align:top}
+td{padding:6pt 8pt;border-bottom:1px solid var(--t12);vertical-align:top}
 td b{font-weight:500}
 td.n{font-family:var(--serif);font-size:13pt;color:var(--fucsiaD);width:34pt}
 tr.on td{background:#fff}
@@ -81,10 +81,10 @@ tr.on td{background:#fff}
 .kpi span{font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--t45);
   display:block;margin-top:5pt;line-height:1.4}
 
-.captura{width:100%;border:1px solid var(--t12);margin-top:12pt}
-.nota{font-size:8.5pt;color:var(--t45);font-style:italic;margin-top:7pt}
-.cta{background:var(--fucsia);color:#fff;padding:18pt 20pt;margin-top:16pt}
-.cta h3{color:#fff;font-size:16pt}
+.captura{width:78%;display:block;margin:10pt auto 0;border:1px solid var(--t12)}
+.nota{font-size:8.3pt;color:var(--t45);font-style:italic;margin-top:9pt;line-height:1.45}
+.cta{background:var(--fucsia);color:#fff;padding:13pt 17pt;margin-top:12pt}
+.cta h3{color:#fff;font-size:15pt}
 .cta p{font-size:10pt;opacity:.94}
 a{color:var(--fucsiaD);text-decoration:none}
 .url{font-family:var(--serif);font-size:15pt;color:var(--tinta);border-bottom:2px solid var(--fucsia);
@@ -153,12 +153,12 @@ a{color:var(--fucsiaD);text-decoration:none}
 
   <div style="margin:16pt 0 6pt">
     <p style="font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:var(--t45);margin-bottom:6pt">Véanla aquí</p>
-    <span class="url" id="URL_SITIO">[URL del sitio]</span>
+    <a class="url" href="https://nails-art-hair-care.vercel.app">nails-art-hair-care.vercel.app</a>
   </div>
 
-  <div class="rule"></div>
+  <img class="captura" src="cap-hero.png" alt="Portada del sitio">
 
-  <div class="grid2">
+  <div class="grid2" style="margin-top:12pt;gap:10pt">
     <div class="card">
       <h3>Reserva en línea, 24/7</h3>
       <p>Cuatro pasos: servicio, especialista, día y hora, datos. La agenda solo ofrece horarios
@@ -195,6 +195,36 @@ a{color:var(--fucsiaD);text-decoration:none}
   canales. En cuanto nos pasen la lista, se cargan y quedan visibles en el catálogo y en la reserva.</p>
 
   <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>02</span></div>
+</section>
+
+
+<section class="page">
+  <p class="eyebrow">02b · La cita, resuelta</p>
+  <h2>Así llega la clienta<br>a recepción</h2>
+  <p class="lead">Al terminar de reservar recibe esto en su celular. El folio es único y el QR
+  contiene los datos de la cita: servicio, día, hora y a nombre de quién.</p>
+
+  <img class="captura" src="cap-ticket.png" alt="Confirmación de cita con código QR" style="width:100%;margin-top:14pt">
+
+  <div class="grid3" style="margin-top:16pt">
+    <div class="box">
+      <h3 style="font-size:11.5pt">Para la clienta</h3>
+      <p style="font-size:9pt;color:var(--t70)">No tiene que recordar nada ni buscar el chat.
+      Abre el QR y ya. También puede meter la cita a su calendario con un toque.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">Para recepción</h3>
+      <p style="font-size:9pt;color:var(--t70)">Se acaba el “¿a nombre de quién?”. El folio identifica
+      la cita en segundos, sin libreta y sin equivocarse de clienta.</p>
+    </div>
+    <div class="box">
+      <h3 style="font-size:11.5pt">Para el salón</h3>
+      <p style="font-size:9pt;color:var(--t70)">Cada cita queda registrada con nombre, teléfono y servicio.
+      Ese registro es la materia prima de las fases 3, 4 y 5.</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>03</span></div>
 </section>
 
 <!-- ============== 3. ROADMAP ============== -->
@@ -259,7 +289,7 @@ a{color:var(--fucsiaD);text-decoration:none}
     </div>
   </div>
 
-  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>03</span></div>
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>04</span></div>
 </section>
 
 <!-- ============== 4. PAUTA Y PROMOCIÓN ============== -->
@@ -301,20 +331,43 @@ a{color:var(--fucsiaD);text-decoration:none}
       <td>Volumen recurrente sin costo de pauta.</td></tr>
   </table>
 
-  <div class="box dark" style="margin-top:16pt">
-    <h3>Todo se mide, o no se hace</h3>
-    <p style="margin-top:5pt">Cada campaña lleva su propio enlace. Al final del mes sabemos exactamente
-    cuántas citas trajo cada peso invertido — no “impresiones”, citas con nombre y folio.</p>
-  </div>
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>05</span></div>
+</section>
 
-  <div class="kpi">
+<section class="page">
+  <p class="eyebrow">04b · Cómo se mide</p>
+  <h2>Citas con nombre,<br>no “impresiones”</h2>
+  <p class="lead">Cada campaña lleva su propio enlace. Al cierre de mes sabemos exactamente cuántas
+  citas trajo cada peso invertido, y de dónde vino cada clienta nueva.</p>
+
+  <div class="kpi" style="margin-top:20pt">
     <div><b>$</b><span>Costo por cita nueva</span></div>
     <div><b>%</b><span>Ocupación de la agenda</span></div>
     <div><b>↺</b><span>Clientas que regresan</span></div>
     <div><b>Ø</b><span>Ticket promedio</span></div>
   </div>
 
-  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>04</span></div>
+  <div class="grid2" style="margin-top:18pt">
+    <div class="box">
+      <h3>Lo que se revisa cada mes</h3>
+      <ul class="check" style="margin-top:6pt">
+        <li>Cuántas citas entraron por la página</li>
+        <li>Cuánto costó traer cada clienta nueva</li>
+        <li>Qué servicio se vende más y cuál no se mueve</li>
+        <li>Qué horas quedan vacías y se pueden promocionar</li>
+        <li>Cuántas clientas volvieron y cuántas se enfriaron</li>
+      </ul>
+    </div>
+    <div class="box dark">
+      <h3>La regla</h3>
+      <p style="margin-top:6pt">Si una campaña no baja el costo por cita o no llena horas muertas,
+      se apaga. No se sostiene nada por “alcance” ni por “me gusta”.</p>
+      <p style="margin-top:10pt">El objetivo no es que los conozcan más gente.<br>
+      Es que la agenda no tenga huecos.</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>06</span></div>
 </section>
 
 <!-- ============== 5. SIGUIENTE PASO ============== -->
@@ -327,7 +380,7 @@ a{color:var(--fucsiaD);text-decoration:none}
   <div class="rule"></div>
 
   <table>
-    <tr><th style="width:34pt">#</th><th>Lo que necesitamos</th><th style="width:1.4in">Para qué</th></tr>
+    <tr><th style="width:34pt">#</th><th>Lo que necesitamos</th><th style="width:2.2in">Para qué</th></tr>
     <tr class="on"><td class="n">1</td><td><b>Lista de precios y servicios</b><br>Con la duración real de cada uno.</td>
       <td>Cargar el catálogo y la agenda con tiempos correctos.</td></tr>
     <tr><td class="n">2</td><td><b>Nombres del equipo</b><br>Quién hace qué (uñas, color, tratamiento, faciales).</td>
@@ -338,9 +391,7 @@ a{color:var(--fucsiaD);text-decoration:none}
       <td>Que la página viva en su propia dirección, no en una de prueba.</td></tr>
   </table>
 
-  <div class="rule"></div>
-
-  <div class="grid2">
+  <div class="grid2" style="margin-top:12pt">
     <div class="box">
       <h3>Qué entregamos en fase 1</h3>
       <ul class="check" style="margin-top:6pt">
@@ -368,7 +419,7 @@ a{color:var(--fucsiaD);text-decoration:none}
     queda lista para recibir su primera reserva real esta misma semana.</p>
   </div>
 
-  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>05</span></div>
+  <div class="foot"><span>Nails Art &amp; Hair Care · Propuesta digital</span><span>07</span></div>
 </section>
 
 </body>
