@@ -4,521 +4,777 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nails Art &amp; Hair Care — Spa de uñas y cuidado capilar · ARTZ Pedregal</title>
-<meta name="description" content="Spa de uñas y especialistas en recuperación capilar en ARTZ Pedregal, segundo piso. Manicure, pedicure, color, tratamientos AVEDA, TRUSS y K18. Agenda tu cita en línea.">
+<meta name="description" content="Spa de uñas y especialistas en recuperación capilar en ARTZ Pedregal, Segundo Nivel, local 236 (en el directorio de la plaza, AVEDA). Manicure, pedicure, diseño de color y tratamientos AVEDA, TRUSS y K18.">
+<meta name="theme-color" content="#F4EFE8">
 <link rel="icon" href="assets/img/logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   NAILS ART & HAIR CARE
+   Paleta y tipo de marca extraídos de sus propios materiales.
+   ============================================================ */
 :root{
-  /* Paleta extraída de sus propios materiales:
-     tinta = tinta del logo · fucsia = portada de Facebook */
-  --tinta:#27190C;
-  --tinta-70:rgba(39,25,12,.70);
-  --tinta-45:rgba(39,25,12,.45);
-  --tinta-12:rgba(39,25,12,.12);
+  --tinta:#231409;
+  --tinta-72:rgba(35,20,9,.72);
+  --tinta-52:rgba(35,20,9,.52);
+  --tinta-62:rgba(35,20,9,.62);   /* AA sobre crema: 4.81 */
+  --tinta-32:rgba(35,20,9,.32);   /* solo bordes, nunca texto */
+  --tinta-14:rgba(35,20,9,.14);
+  --tinta-07:rgba(35,20,9,.07);
+  --negro:#140C06;
   --fucsia:#EC55AA;
-  --fucsia-oscuro:#C33383;
-  --crema:#F8F4EF;
-  --crema-2:#F1E9E0;
-  --nude:#D8C4B4;
-  --blanco:#fff;
-  --radio:2px;
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Jost','Helvetica Neue',Helvetica,Arial,sans-serif;
-  --ancho:1180px;
+  --fucsia-p:#B62E78;
+  --crema:#F4EFE8;
+  --crema-2:#EDE5DA;
+  --arena:#C9AE99;
+  --arena-t:#9C8570;              /* números de sección, AA-grande */
+  --hueso:#FBF8F4;
+  --display:'Bodoni Moda',Didot,'Bodoni MT',Georgia,serif;
+  --ui:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mx:min(1320px,92vw);
+  --sw:cubic-bezier(.22,.61,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   background:var(--crema);color:var(--tinta);
-  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-family:var(--ui);font-weight:300;font-size:16.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
 }
-img{max-width:100%;display:block}
-a{color:inherit}
-.wrap{max-width:var(--ancho);margin:0 auto;padding:0 28px}
-.eyebrow{
-  font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
-  color:var(--fucsia-oscuro);margin-bottom:18px;
+img{max-width:100%;height:auto;display:block;filter:saturate(.87) contrast(1.07) brightness(1.01)}
+p{max-width:62ch}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--fucsia);color:#fff}
+:focus-visible{outline:2px solid var(--fucsia);outline-offset:3px}
+
+/* --- grano: mata el plano digital --- */
+body::after{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
 }
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
-h2{font-size:clamp(34px,5vw,58px)}
-h3{font-size:24px}
-.lead{font-size:17px;color:var(--tinta-70);max-width:52ch}
+
+/* el multiply es invisible sobre #140C06: las oscuras llevan su propia capa */
+.sec-oscura,.pie,.cierre{position:relative}
+.sec-oscura::before,.pie::before,.cierre::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.15;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");mix-blend-mode:screen;
+}
+.sec-oscura>*,.pie>*,.cierre>*{position:relative;z-index:1}
+
+/* ---------- tipografía ---------- */
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;letter-spacing:-.018em;text-wrap:balance}
+h1{font-size:clamp(2.9rem,7.1vw,6.6rem);line-height:.94}
+h2{font-size:clamp(2.5rem,5.6vw,4.9rem);line-height:.96}
+h3{font-size:clamp(1.4rem,2.2vw,1.85rem);line-height:1.12}
+em{font-style:italic}
+.kicker{
+  font-family:var(--ui);font-size:.66rem;font-weight:500;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--tinta-62);
+}
+.hero .kicker{color:var(--fucsia-p)}
+.hero .kicker{font-size:clamp(.62rem,.86vw,.66rem);line-height:1.9}
+.lede{font-size:clamp(1.02rem,1.35vw,1.2rem);color:var(--tinta-72);max-width:46ch;line-height:1.62}
+.wrap{width:var(--mx);margin-inline:auto}
+
+/* número editorial de sección */
+.marca-sec{display:flex;align-items:baseline;gap:1.1rem;margin-bottom:1.5rem;position:relative}
+.marca-sec .n{
+  font-family:var(--display);font-size:clamp(2.4rem,4.4vw,3.4rem);line-height:.8;
+  color:var(--arena-t);font-style:italic;
+}
+@media(min-width:1024px){
+  .marca-sec{align-items:center;min-height:4.6rem}
+  .marca-sec .n{
+    position:absolute;left:-.35rem;top:50%;transform:translateY(-52%);
+    font-size:7.4rem;line-height:1;z-index:0;
+    color:transparent;-webkit-text-stroke:1px var(--tinta-14);
+  }
+  .marca-sec .kicker{position:relative;z-index:1;padding-left:3.6rem}
+  .sec-oscura .marca-sec .n{-webkit-text-stroke-color:rgba(244,239,232,.22)}
+}
 
 /* ---------- botones ---------- */
 .btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:15px 30px;border:0;border-radius:var(--radio);cursor:pointer;
-  font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.18em;
-  text-transform:uppercase;text-decoration:none;transition:.25s ease;
+  position:relative;display:inline-flex;align-items:center;gap:.7em;overflow:hidden;
+  padding:1.08em 2.1em;font-size:.72rem;font-weight:500;letter-spacing:.19em;
+  text-transform:uppercase;isolation:isolate;transition:color .4s var(--sw);
 }
-.btn-p{background:var(--tinta);color:var(--crema)}
-.btn-p:hover{background:var(--fucsia)}
-.btn-g{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta-12)}
-.btn-g:hover{box-shadow:inset 0 0 0 1px var(--tinta);}
-.btn-wa{background:#25D366;color:#06331a}
-.btn-wa:hover{filter:brightness(1.06)}
-.btn:disabled{opacity:.3;cursor:not-allowed}
+.btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);
+  transition:transform .45s var(--sw);
+}
+.btn:hover::before{transform:translateY(0)}
+.btn-1{background:var(--tinta);color:var(--crema)}
+.btn-1::before{background:var(--fucsia)}
+.btn-1:hover{color:#fff}
+.btn-2{color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta-32)}
+.btn-2::before{background:var(--tinta)}
+.btn-2:hover{color:var(--crema)}
+.btn-wa{background:#17843F;color:#fff}
+.btn-wa::before{background:#1FA855}
+.btn-claro{background:var(--crema);color:var(--tinta)}
+.btn-claro::before{background:var(--fucsia)}
+.btn-claro:hover{color:#fff}
 
 /* ---------- nav ---------- */
-header{
-  position:sticky;top:0;z-index:60;background:rgba(248,244,239,.88);
-  backdrop-filter:blur(14px);border-bottom:1px solid var(--tinta-12);
+.top{
+  position:fixed;inset:0 0 auto;z-index:100;background:var(--crema);
+  transition:box-shadow .45s var(--sw),padding .45s var(--sw);
+  padding:1.15rem 0;box-shadow:0 1px 0 var(--tinta-07);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-.nav img{height:42px;width:auto}
-.nav nav{display:flex;gap:34px}
-.nav nav a{
-  text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--tinta-70);transition:.2s;
+.top.pegado{background:rgba(244,239,232,.95);backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:0 1px 0 var(--tinta-14);padding:.7rem 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.marca-logo{height:46px;width:auto;transition:height .45s var(--sw)}
+.top.pegado .marca-logo{height:34px}
+.menu{display:flex;gap:2.3rem}
+.menu a{
+  position:relative;font-size:.7rem;font-weight:400;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--tinta-72);padding-block:.3rem;
 }
-.nav nav a:hover{color:var(--fucsia-oscuro)}
-.nav .btn{padding:12px 22px}
-@media(max-width:900px){.nav nav{display:none}}
+.menu a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--tinta);
+  transform:scaleX(0);transform-origin:right;transition:transform .4s var(--sw);
+}
+.menu a:hover{color:var(--tinta)}
+.menu a:hover::after{transform:scaleX(1);transform-origin:left}
+.top .btn{padding:.85em 1.5em}
+@media(max-width:1080px){.menu{display:none}}
+@media(max-width:1080px){.top .btn{display:none}}
 
-/* ---------- hero ---------- */
-.hero{position:relative;padding:80px 0 96px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(46px,7.4vw,92px)}
-.hero h1 em{font-style:italic;color:var(--fucsia-oscuro)}
-.hero .lead{margin:26px 0 34px;font-size:19px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero-meta{
-  display:flex;gap:30px;margin-top:44px;padding-top:26px;
-  border-top:1px solid var(--tinta-12);flex-wrap:wrap;
+/* ---------- hero: foto a sangre, texto encima ---------- */
+.hero{
+  position:relative;min-height:min(92vh,860px);display:flex;align-items:flex-end;
+  padding:9rem 0 clamp(2.6rem,5vw,4.2rem);overflow:hidden;background:var(--negro);
 }
-.hero-meta div{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-45)}
-.hero-meta strong{display:block;font-family:var(--serif);font-size:26px;letter-spacing:0;
-  text-transform:none;color:var(--tinta);font-weight:400;margin-top:4px}
-.hero-fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
-.hero-fotos img{border-radius:var(--radio);object-fit:cover;width:100%}
-.hero-fotos img:first-child{height:420px;margin-top:56px}
-.hero-fotos img:last-child{height:470px}
-@media(max-width:900px){
-  .hero{padding:50px 0 64px}
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .hero-fotos img:first-child{height:250px;margin-top:0}
-  .hero-fotos img:last-child{height:250px}
+.hero-bg{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 42%;
+  filter:saturate(.72) contrast(1.06) brightness(.94);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(95deg,rgba(20,12,6,.9) 0%,rgba(20,12,6,.72) 38%,rgba(20,12,6,.28) 72%,rgba(20,12,6,.42) 100%),
+    linear-gradient(180deg,rgba(20,12,6,.62) 0%,transparent 26%,transparent 52%,rgba(20,12,6,.7) 100%);
+}
+.hero-in{position:relative;z-index:2;color:var(--crema)}
+.hero h1,.hero-sub,.hero-cta,.hero-datos{max-width:min(44rem,100%)}
+.hero .kicker{color:var(--fucsia);font-size:clamp(.6rem,.86vw,.68rem);line-height:1.9}
+.hero h1{margin:1.1rem 0 0;color:var(--crema)}
+.hero h1 .it{font-style:italic;color:var(--fucsia);letter-spacing:-.03em}
+.hero-sub{margin:1.6rem 0 2.1rem;max-width:38ch;color:rgba(244,239,232,.82)}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .btn-2{color:var(--crema);box-shadow:inset 0 0 0 1px rgba(244,239,232,.42)}
+.hero .btn-2::before{background:var(--crema)}
+.hero .btn-2:hover{color:var(--tinta)}
+.hero-datos{
+  display:grid;grid-template-columns:repeat(3,auto);gap:clamp(1.4rem,3.4vw,3rem);justify-content:start;
+  margin-top:clamp(2rem,4vw,3rem);padding-top:1.4rem;border-top:1px solid rgba(244,239,232,.24);
+}
+.hero-datos dt{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,239,232,.6)}
+.hero-datos dd{font-family:var(--display);font-size:clamp(1.15rem,1.9vw,1.45rem);margin-top:.2rem;
+  line-height:1.15;color:var(--crema)}
+.mos::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(203deg,rgba(236,85,170,.10),transparent 46%,rgba(35,20,9,.24));
+  mix-blend-mode:multiply;
+}
+@media(max-width:760px){
+  .hero{min-height:min(88vh,720px);padding:7.5rem 0 2.6rem}
+  .hero-bg{object-position:56% 38%}
+  .hero-datos{grid-template-columns:1fr 1fr;gap:1.1rem 1.6rem}
+  .hero-datos div:last-child{grid-column:1/-1}
 }
 
-/* ---------- marcas ---------- */
-.marcas{background:var(--tinta);color:var(--crema);padding:34px 0}
-.marcas .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.marcas span{font-size:11px;letter-spacing:.26em;text-transform:uppercase;opacity:.5}
-.marcas ul{list-style:none;display:flex;gap:44px;flex-wrap:wrap}
-.marcas li{font-family:var(--serif);font-size:27px;letter-spacing:.06em}
+/* ---------- credenciales ---------- */
+.cred{padding:clamp(2.6rem,4.5vw,4rem) 0;border-block:1px solid var(--tinta-14);background:var(--hueso)}
+.cred ul{list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;
+  gap:clamp(1.8rem,5vw,4.4rem);justify-content:space-between}
+.cred li{font-family:var(--display);font-size:clamp(1.35rem,2.5vw,2.05rem);letter-spacing:.09em;
+  color:var(--tinta);opacity:.62;transition:opacity .5s var(--sw)}
+.cred:hover li{opacity:.42}
+.cred li:hover{opacity:1}
+.cred p{margin-top:clamp(1.4rem,2.5vw,2rem);padding-top:clamp(1.2rem,2vw,1.6rem);
+  border-top:1px solid var(--tinta-07);font-size:.94rem;color:var(--tinta-62);max-width:78ch}
+.cred p b{font-weight:400;color:var(--tinta)}
 
 /* ---------- secciones ---------- */
-section{padding:104px 0}
-.sec-head{max-width:640px;margin-bottom:56px}
-.sec-head h2{margin-bottom:18px}
+.sec{padding:var(--pt,clamp(5rem,9vw,8.5rem)) 0 var(--pb,clamp(5rem,9vw,8.5rem))}
+#casa{--pt:clamp(5.5rem,12vw,11rem);--pb:clamp(3rem,5vw,4.5rem);overflow-x:clip}
+#servicios{--pt:clamp(4rem,7vw,6rem);--pb:clamp(4.5rem,8vw,7rem)}
+#disponibilidad{--pt:clamp(5rem,9vw,8rem);--pb:clamp(5rem,9vw,8rem)}
+#trabajos{--pt:clamp(6rem,12vw,10.5rem);--pb:clamp(6rem,12vw,10.5rem)}
+#membresias{--pt:clamp(4.5rem,8vw,7rem);--pb:clamp(5rem,9vw,8rem)}
+#visitanos{--pt:clamp(5rem,9vw,8rem);--pb:clamp(3rem,5vw,4.5rem)}
+.sec-oscura{background:var(--negro);color:var(--crema)}
+.sec-oscura .kicker{color:rgba(244,239,232,.6)}
+.sec-oscura .lede{color:rgba(244,239,232,.68)}
+.sec-oscura .marca-sec .n{color:rgba(244,239,232,.28)}
+.sec-crema2{background:var(--crema-2)}
 
-/* ---------- servicios ---------- */
-.tabs{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+/* ---------- la casa ---------- */
+.casa-g{display:grid;grid-template-columns:.66fr 1fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.casa-txt p+p{margin-top:1.15rem}
+.casa-fotos{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start;
+  margin-right:calc((100vw - var(--mx)) / -2)}
+.casa-fotos img{width:100%;object-fit:cover}
+.casa-fotos img:first-child{aspect-ratio:3/4;margin-top:3.2rem}
+.casa-fotos img:last-child{aspect-ratio:3/4.35}
+.firma{
+  font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--fucsia-p);
+  margin-top:1.6rem;
+}
+@media(max-width:900px){.casa-g{grid-template-columns:1fr;gap:2.6rem}
+  .casa-fotos{margin-right:0}
+  .casa-fotos img:first-child{margin-top:0}}
+
+/* ---------- carta de servicios ---------- */
+.tabs{display:flex;gap:2rem;margin:2.2rem 0 .4rem;border-bottom:1px solid var(--tinta-14)}
 .tab{
-  padding:12px 26px;border:0;background:transparent;cursor:pointer;
-  box-shadow:inset 0 0 0 1px var(--tinta-12);border-radius:var(--radio);
-  font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--tinta-70);transition:.2s;
+  position:relative;padding:.9rem 0;font-size:.7rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--tinta-62);transition:color .3s;
 }
-.tab[aria-selected=true]{background:var(--tinta);color:var(--crema);box-shadow:none}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;
-  background:var(--tinta-12);border:1px solid var(--tinta-12)}
-.svc{
-  background:var(--crema);padding:28px 26px;display:flex;flex-direction:column;
-  gap:8px;transition:.2s;
+.tab::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:2px;
+  background:var(--fucsia);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--sw)}
+.tab[aria-selected=true]{color:var(--tinta)}
+.tab[aria-selected=true]::after{transform:scaleX(1)}
+
+.carta{columns:2;column-gap:clamp(2.5rem,6vw,6rem);margin-top:2.6rem}
+@media(max-width:820px){.carta{columns:1}}
+.plato{
+  break-inside:avoid;padding:1.15rem 0;border-bottom:1px solid var(--tinta-07);
+  display:grid;grid-template-columns:1fr auto;gap:.4rem 1.2rem;align-items:baseline;
 }
-.svc:hover{background:var(--blanco)}
-.svc-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-.svc h3{font-size:21px}
-.svc .precio{font-family:var(--serif);font-size:21px;white-space:nowrap;color:var(--fucsia-oscuro)}
-.svc .precio.pend{font-family:var(--sans);font-size:10px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--tinta-45);border:1px dashed var(--tinta-12);padding:5px 9px}
-.svc p{font-size:14px;color:var(--tinta-70);line-height:1.55}
-.svc .dur{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-45);margin-top:auto;padding-top:12px}
-.nota-precios{
-  margin-top:26px;padding:16px 20px;background:var(--crema-2);border-left:2px solid var(--fucsia);
-  font-size:13px;color:var(--tinta-70);
+.plato:hover{border-bottom-color:var(--tinta-62)}
+.plato h3{font-size:1.3rem}
+.plato .dur{
+  font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-62);
+  white-space:nowrap;
+}
+.plato p{grid-column:1/-1;font-size:.9rem;color:var(--tinta-62);line-height:1.5;max-width:44ch}
+.plato .precio{
+  grid-column:2;grid-row:1;font-family:var(--display);font-size:1.25rem;color:var(--tinta-62);
+  font-variant-numeric:tabular-nums;
+}
+.aviso-precio{
+  margin-top:2.4rem;padding:1.1rem 1.4rem;background:var(--hueso);
+  border-left:2px solid var(--arena-t);font-size:.88rem;color:var(--tinta-72);max-width:62ch;
 }
 
-/* ---------- galería ---------- */
-.galeria{background:var(--crema-2)}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gal-grid figure{position:relative;overflow:hidden;border-radius:var(--radio);background:var(--nude)}
-.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
-.gal-grid figure:hover img{transform:scale(1.05)}
-.gal-grid figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;
-  background:linear-gradient(transparent,rgba(39,25,12,.78));color:#fff;
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-}
-.g-alta{grid-row:span 2}
-.gal-grid figure{min-height:220px}
-.g-alta{min-height:454px}
-@media(max-width:900px){
-  .gal-grid{grid-template-columns:repeat(2,1fr)}
-  .g-alta{grid-row:span 1;min-height:220px}
-}
-
-/* ---------- reserva ---------- */
-.reserva{background:var(--tinta);color:var(--crema)}
-.reserva .eyebrow{color:var(--fucsia)}
-.reserva .lead{color:rgba(248,244,239,.68)}
-.booking{
-  background:var(--crema);color:var(--tinta);border-radius:var(--radio);
-  margin-top:48px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.28);
-}
-.pasos{display:flex;border-bottom:1px solid var(--tinta-12);background:var(--blanco)}
-.paso{
-  flex:1;padding:18px 10px;text-align:center;font-size:10px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--tinta-45);position:relative;transition:.25s;
-}
-.paso b{display:block;font-family:var(--serif);font-size:19px;letter-spacing:0;margin-bottom:3px;font-weight:400}
-.paso.on{color:var(--tinta)}
-.paso.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--fucsia)}
-.paso.done{color:var(--fucsia-oscuro)}
-.panel{padding:40px}
-.panel[hidden]{display:none}
-.panel h3{margin-bottom:6px}
-.panel .sub{font-size:14px;color:var(--tinta-70);margin-bottom:28px}
-.opciones{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.opt{
-  text-align:left;background:var(--blanco);border:0;cursor:pointer;padding:18px 20px;
-  box-shadow:inset 0 0 0 1px var(--tinta-12);border-radius:var(--radio);
-  font-family:var(--sans);transition:.2s;color:var(--tinta);
-}
-.opt:hover{box-shadow:inset 0 0 0 1px var(--nude)}
-.opt[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--fucsia);background:#fff}
-.opt strong{display:block;font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:3px}
-.opt small{font-size:12px;color:var(--tinta-45);letter-spacing:.06em}
-.cal{display:grid;grid-template-columns:1fr 1fr;gap:36px}
-@media(max-width:820px){.cal{grid-template-columns:1fr;gap:28px}.panel{padding:26px 20px}}
-.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.cal-head strong{font-family:var(--serif);font-size:20px;font-weight:400;text-transform:capitalize}
-.cal-nav{background:transparent;border:0;cursor:pointer;font-size:19px;color:var(--tinta-70);padding:4px 10px}
-.cal-nav:hover{color:var(--fucsia)}
-.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
-.dow{font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:center;
-  color:var(--tinta-45);padding-bottom:6px}
+/* ---------- disponibilidad ---------- */
+.dispo-g{display:grid;grid-template-columns:minmax(0,1fr);gap:2.6rem}
+/* los grid items no deben estirarse por su contenido (la tira de días) */
+.dispo-g>*,.hero-g>*,.casa-g>*,.visita-g>*,.planes>*,.mosaico>*,.cred>*{min-width:0}
+.dias{display:flex;gap:.55rem;overflow-x:auto;padding-bottom:.7rem;scrollbar-width:thin}
+.dias::-webkit-scrollbar{height:3px}
+.dias::-webkit-scrollbar-thumb{background:rgba(244,239,232,.25)}
 .dia{
-  aspect-ratio:1;border:0;background:var(--blanco);cursor:pointer;border-radius:var(--radio);
-  font-family:var(--sans);font-size:14px;color:var(--tinta);
-  box-shadow:inset 0 0 0 1px var(--tinta-12);transition:.15s;
+  flex:none;min-width:5.1rem;padding:.95rem .7rem;text-align:center;
+  box-shadow:inset 0 0 0 1px rgba(244,239,232,.2);transition:.28s var(--sw);
 }
-.dia:hover:not(:disabled){box-shadow:inset 0 0 0 1px var(--nude)}
-.dia:disabled{opacity:.22;cursor:not-allowed;box-shadow:none;background:transparent}
-.dia[aria-pressed=true]{background:var(--tinta);color:var(--crema);box-shadow:none}
-.horas{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
-.hora{
-  padding:12px 4px;border:0;background:var(--blanco);cursor:pointer;border-radius:var(--radio);
-  box-shadow:inset 0 0 0 1px var(--tinta-12);font-family:var(--sans);font-size:14px;color:var(--tinta);transition:.15s;
-}
-.hora:hover:not(:disabled){box-shadow:inset 0 0 0 1px var(--nude)}
-.hora:disabled{opacity:.28;cursor:not-allowed;text-decoration:line-through}
-.hora[aria-pressed=true]{background:var(--fucsia);color:#fff;box-shadow:none}
-.vacio{font-size:14px;color:var(--tinta-45);padding:20px 0}
-.campos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.campos{grid-template-columns:1fr}}
-label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--tinta-45);margin-bottom:7px}
-input,textarea,select{
-  width:100%;padding:14px 16px;border:0;background:var(--blanco);
-  box-shadow:inset 0 0 0 1px var(--tinta-12);border-radius:var(--radio);
-  font-family:var(--sans);font-size:15px;color:var(--tinta);
-}
-input:focus,textarea:focus{outline:0;box-shadow:inset 0 0 0 2px var(--fucsia)}
-.ancho-full{grid-column:1/-1}
-.acciones{display:flex;justify-content:space-between;gap:12px;margin-top:32px;
-  padding-top:24px;border-top:1px solid var(--tinta-12);flex-wrap:wrap}
-.resumen{
-  background:var(--crema-2);padding:18px 22px;border-radius:var(--radio);margin-bottom:26px;
-  display:flex;gap:30px;flex-wrap:wrap;font-size:13px;
-}
-.resumen b{display:block;font-family:var(--serif);font-size:17px;font-weight:400;margin-top:2px}
-.resumen span{color:var(--tinta-45);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.dia small{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(244,239,232,.5)}
+.dia b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:400;margin-top:.15rem}
+.dia i{display:block;font-style:normal;font-size:.58rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(244,239,232,.62);margin-top:.3rem}
+.dia:hover{box-shadow:inset 0 0 0 1px rgba(244,239,232,.5)}
+.dia[aria-pressed=true]{background:var(--crema);color:var(--tinta);box-shadow:none}
+.dia[aria-pressed=true] small,.dia[aria-pressed=true] i{color:var(--tinta-62)}
 
-/* ---------- ticket / QR ---------- */
-.ticket{display:grid;grid-template-columns:1fr 300px;gap:0;background:var(--blanco);
-  border-radius:var(--radio);overflow:hidden;box-shadow:inset 0 0 0 1px var(--tinta-12)}
-@media(max-width:760px){.ticket{grid-template-columns:1fr}}
-.ticket-info{padding:36px}
-.ticket-qr{
-  background:var(--tinta);color:var(--crema);padding:32px 24px;text-align:center;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
-  border-left:2px dashed var(--tinta-12);
+.dispo-cab{display:flex;align-items:baseline;justify-content:space-between;gap:1.4rem;
+  flex-wrap:wrap;margin-bottom:1.3rem}
+.dispo-cab h3{font-size:1.7rem}
+.libres{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fucsia)}
+.franja+.franja{margin-top:1.8rem}
+.franja-t{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid rgba(244,239,232,.14)}
+.franja-t span:first-child{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(244,239,232,.72)}
+.franja-t span:last-child{font-size:.62rem;letter-spacing:.14em;color:rgba(244,239,232,.5);
+  font-variant-numeric:tabular-nums}
+.bloques{display:grid;grid-template-columns:repeat(auto-fill,minmax(6.2rem,1fr));gap:.55rem}
+.aviso-antes{
+  display:inline-flex;align-items:center;gap:.7rem;margin-top:1.6rem;padding:.7rem 1.1rem;
+  box-shadow:inset 0 0 0 1px rgba(244,239,232,.2);font-size:.74rem;letter-spacing:.09em;
+  color:rgba(244,239,232,.8);max-width:none;
 }
-.ticket-qr canvas,.ticket-qr img{background:#fff;padding:12px;border-radius:var(--radio);width:190px;height:190px}
-.folio{font-family:var(--serif);font-size:22px;letter-spacing:.14em}
-.ticket-qr small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;line-height:1.7}
-.ok-badge{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.18em;
-  text-transform:uppercase;color:#1f7a4d;background:#e4f5ec;padding:8px 14px;border-radius:var(--radio);margin-bottom:20px}
-.detalle{list-style:none;margin:22px 0}
-.detalle li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;
-  border-bottom:1px solid var(--tinta-12);font-size:15px}
-.detalle li span{color:var(--tinta-45);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+.aviso-antes::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--fucsia);
+  flex:none;animation:late 2.4s ease-in-out infinite}
+.sello-t{margin-top:1.2rem;font-size:.66rem;letter-spacing:.1em;color:rgba(244,239,232,.5);max-width:60ch}
+.lleno{padding:1.4rem 1.6rem;box-shadow:inset 0 0 0 1px rgba(244,239,232,.18);
+  font-size:.95rem;color:rgba(244,239,232,.78);line-height:1.55}
+.lleno b{color:var(--crema);font-weight:400}
+.bloque{
+  padding:.95rem .4rem;text-align:center;font-size:.98rem;letter-spacing:.03em;
+  box-shadow:inset 0 0 0 1px rgba(244,239,232,.2);transition:.24s var(--sw);position:relative;
+}
+.bloque:hover:not(:disabled){background:rgba(244,239,232,.09);box-shadow:inset 0 0 0 1px rgba(244,239,232,.55)}
+.bloque:disabled{color:rgba(244,239,232,.42);box-shadow:inset 0 0 0 1px rgba(244,239,232,.09);cursor:not-allowed}
+.bloque:disabled::after{
+  content:"";position:absolute;left:22%;right:22%;top:50%;height:1px;background:rgba(244,239,232,.22);
+}
+.bloque[aria-pressed=true]{background:var(--fucsia);color:var(--negro);font-weight:500;box-shadow:none}
+.leyenda{display:flex;gap:1.6rem;margin-top:1.3rem;font-size:.63rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(244,239,232,.58);flex-wrap:wrap}
+.leyenda i{display:inline-block;width:.72rem;height:.72rem;margin-right:.45rem;
+  vertical-align:-1px;box-shadow:inset 0 0 0 1px rgba(244,239,232,.4)}
+.leyenda .ll i{background:transparent}
+.leyenda .oc i{background:rgba(244,239,232,.09);box-shadow:inset 0 0 0 1px rgba(244,239,232,.12)}
+.leyenda .el i{background:var(--fucsia);box-shadow:none}
+
+/* panel de apartado */
+.apartado{
+  margin-top:2.4rem;background:rgba(244,239,232,.05);
+  box-shadow:inset 0 0 0 1px rgba(244,239,232,.16);
+  padding:clamp(1.6rem,3vw,2.4rem);
+  display:grid;grid-template-columns:1fr auto;gap:1.6rem 2.4rem;align-items:center;
+}
+.apartado[hidden]{display:none}
+.apartado .res{font-family:var(--display);font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.25}
+.apartado .res b{color:var(--fucsia);font-weight:400;font-style:italic}
+.apartado .nota{
+  margin-top:.85rem;font-size:.9rem;color:rgba(244,239,232,.66);max-width:52ch;line-height:1.55;
+}
+.apartado .acc{display:flex;gap:.7rem;flex-wrap:wrap}
+@media(max-width:820px){.apartado{grid-template-columns:1fr}}
+.pronto{
+  display:inline-flex;align-items:center;gap:.55rem;margin-bottom:.9rem;
+  font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--fucsia);
+}
+.pronto::before{content:"";width:1.6rem;height:1px;background:var(--fucsia)}
+@keyframes late{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+
+/* ---------- trabajos ---------- */
+.mosaico{display:grid;grid-template-columns:repeat(12,1fr);gap:.9rem;margin-top:3rem}
+.mos{position:relative;overflow:hidden;background:var(--arena)}
+.mos img{width:100%;height:100%;object-fit:cover}
+.mos::after{transform:translateY(100%);transition:transform .55s var(--sw)}
+.mos:hover::after{transform:none}
+.mos::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;z-index:1;
+  background:linear-gradient(transparent,rgba(20,12,6,.72));pointer-events:none}
+.mos figcaption{
+  position:absolute;left:1.1rem;bottom:.9rem;z-index:2;font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#fff;
+  opacity:0;transform:translateY(8px);transition:.45s var(--sw) .06s;
+}
+.mos:hover figcaption{opacity:1;transform:none}
+@media(hover:none){
+  .mos figcaption{opacity:1;transform:none}
+  .mos::after{transform:none}
+}
+.m-a{grid-column:span 7;aspect-ratio:4/5}
+.m-b{grid-column:span 5;aspect-ratio:3/4;margin-top:3.5rem}
+.m-c{grid-column:span 5;aspect-ratio:1}
+.m-d{grid-column:span 3;aspect-ratio:3/4}
+.m-e{grid-column:span 4;aspect-ratio:1;margin-top:-2.5rem}
+.m-f{grid-column:span 8;aspect-ratio:16/9}
+.m-g{grid-column:span 4;aspect-ratio:3/4;margin-top:-4rem}
+@media(max-width:820px){
+  .mosaico{grid-template-columns:repeat(6,1fr);gap:.55rem}
+  .m-a,.m-b,.m-f{grid-column:span 6;aspect-ratio:4/3}
+  .m-c,.m-d,.m-e,.m-g{grid-column:span 3;aspect-ratio:1}
+  .m-b,.m-e,.m-g{margin-top:0}
+}
+
+/* ---------- membresías ---------- */
+.planes{display:grid;grid-template-columns:1fr 1.22fr 1fr;gap:1.1rem;margin-top:3rem;align-items:start}
+@media(max-width:900px){.planes{grid-template-columns:1fr}}
+.plan{
+  background:var(--hueso);padding:clamp(1.7rem,2.6vw,2.3rem);
+  box-shadow:inset 0 0 0 1px var(--tinta-07);display:flex;flex-direction:column;
+  transition:background .45s var(--sw),box-shadow .45s var(--sw);
+}
+.plan:hover{background:var(--crema);box-shadow:inset 0 0 0 1px var(--tinta),5px 5px 0 0 var(--arena)}
+.plan.destacado{background:var(--tinta);color:var(--crema);box-shadow:none}
+.plan.destacado .plan-n,.plan.destacado li{color:rgba(244,239,232,.72)}
+.plan.destacado .plan-p{color:var(--fucsia)}
+.plan-etq{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--tinta-62)}
+.plan.destacado .plan-etq{color:var(--fucsia)}
+.plan h3{margin:.7rem 0 .3rem;font-size:1.9rem}
+.plan-n{font-size:.9rem;color:var(--tinta-62);line-height:1.5}
+.plan-p{margin:1.5rem 0 .2rem}
+.plan-p .raya{display:block;width:3.2rem;height:1px;background:var(--arena-t);margin-bottom:.7rem}
+.plan.destacado .plan-p .raya{background:var(--fucsia)}
+.plan-p small{font-family:var(--ui);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--tinta-62);display:block}
+.plan.destacado .plan-p small{color:rgba(244,239,232,.55)}
+.plan.destacado .plan-p small{color:rgba(244,239,232,.45)}
+.plan ul{list-style:none;margin:1.5rem 0 0;font-size:.92rem;color:var(--tinta-72)}
+.plan li{padding:.62rem 0 .62rem 1.35rem;position:relative;border-top:1px solid var(--tinta-07)}
+.plan.destacado li{border-top-color:rgba(244,239,232,.14)}
+.plan li::before{content:"";position:absolute;left:0;top:1.02rem;width:.36rem;height:.36rem;
+  background:var(--arena-t);border-radius:50%}
+.plan.destacado li::before{background:var(--fucsia)}
+.pago{margin-top:2.6rem;padding:1.7rem 1.9rem;background:var(--tinta);color:var(--crema)}
+.pago .et{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--fucsia);
+  display:block;margin-bottom:.7rem}
+.pago p{font-size:.96rem;color:rgba(244,239,232,.75);line-height:1.6;max-width:76ch}
+.pago b{color:var(--crema);font-weight:400}
+
+/* ---------- visítanos ---------- */
+.visita-g{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(2rem,5vw,4.5rem)}
+@media(max-width:900px){.visita-g{grid-template-columns:1fr}}
+.plaza{background:var(--tinta);color:var(--crema);padding:clamp(1.6rem,3vw,2.2rem);margin-bottom:2.4rem}
+.plaza .et{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--fucsia)}
+.plaza .dir{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.14;margin:.6rem 0 .2rem}
+.plaza .dir span{color:var(--fucsia)}
+.plaza .calle{font-size:.9rem;color:rgba(244,239,232,.6);line-height:1.55;max-width:44ch}
+.llegar{list-style:none;counter-reset:paso;margin-top:1.7rem;padding-top:1.4rem;
+  border-top:1px solid rgba(244,239,232,.16)}
+.llegar li{counter-increment:paso;position:relative;padding:.62rem 0 .62rem 2.2rem;
+  font-size:.94rem;color:rgba(244,239,232,.78);line-height:1.55;max-width:46ch}
+.llegar li::before{
+  content:counter(paso,decimal-leading-zero);position:absolute;left:0;top:.62rem;
+  font-family:var(--display);font-size:.85rem;font-style:italic;color:var(--arena);
+}
+.llegar li b{color:var(--crema);font-weight:400}
+.ojo{
+  margin-top:1.5rem;padding:.95rem 1.1rem;background:rgba(236,85,170,.13);
+  box-shadow:inset 0 0 0 1px rgba(236,85,170,.3);
+  font-size:.9rem;color:rgba(244,239,232,.86);line-height:1.5;max-width:48ch;
+}
+.ojo b{color:var(--fucsia);font-weight:500}
+.tabla{width:100%;border-collapse:collapse}
+.tabla th{text-align:left;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--tinta-62);font-weight:500;padding:.7rem 0;border-bottom:1px solid var(--tinta-14)}
+.tabla td{padding:.72rem 0;border-bottom:1px solid var(--tinta-07);font-size:.96rem}
+.tabla td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.tabla tr.hoy td{color:var(--fucsia-p)}
+.tabla tr.hoy td:first-child::after{
+  content:"hoy";font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+  margin-left:.6rem;color:var(--fucsia);vertical-align:1px;
+}
+.contactos{list-style:none;margin-top:2.2rem}
+.contactos li{display:flex;justify-content:space-between;gap:1rem;padding:.72rem 0;
+  border-bottom:1px solid var(--tinta-07);font-size:.96rem;flex-wrap:wrap}
+.contactos span{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tinta-62);
   align-self:center}
-.detalle li b{font-weight:400;font-family:var(--serif);font-size:18px;text-align:right}
-
-/* ---------- ubicación ---------- */
-.ubica-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-@media(max-width:900px){.ubica-grid{grid-template-columns:1fr;gap:36px}}
-.horario{list-style:none;margin:8px 0 30px}
-.horario li{display:flex;justify-content:space-between;padding:12px 0;
-  border-bottom:1px solid var(--tinta-12);font-size:15px}
-.horario li.hoy{color:var(--fucsia-oscuro);font-weight:400}
-.horario li.hoy::after{content:" hoy";font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-  align-self:center;margin-left:10px;opacity:.7}
-.mapa{border:0;width:100%;height:400px;border-radius:var(--radio);
-  filter:grayscale(1) contrast(.95);background:var(--crema-2)}
-.contacto-lista{list-style:none;margin-top:26px}
-.contacto-lista li{padding:11px 0;border-bottom:1px solid var(--tinta-12);font-size:15px;
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.contacto-lista span{color:var(--tinta-45);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.contacto-lista a{text-decoration:none;border-bottom:1px solid var(--tinta-12)}
-.contacto-lista a:hover{color:var(--fucsia-oscuro)}
+.contactos a{border-bottom:1px solid var(--tinta-14);transition:.3s}
+.contactos a:hover{border-bottom-color:var(--tinta);color:var(--tinta)}
+.mapa{width:100%;aspect-ratio:4/3.4;border:0;filter:grayscale(1) contrast(.92) sepia(.14);
+  background:var(--crema-2)}
 
 /* ---------- cierre ---------- */
-.cierre{background:var(--fucsia);color:#fff;text-align:center}
-.cierre h2{margin-bottom:20px}
-.cierre p{max-width:46ch;margin:0 auto 34px;font-size:17px;opacity:.92}
-.cierre .btn-p{background:#fff;color:var(--tinta)}
-.cierre .btn-p:hover{background:var(--tinta);color:#fff}
-
-footer{background:var(--tinta);color:rgba(248,244,239,.62);padding:56px 0 30px;font-size:13px}
-footer img{height:52px;margin-bottom:22px;filter:invert(1) sepia(1) saturate(0) brightness(1.6)}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
-@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
-footer h4{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--crema);margin-bottom:14px;font-weight:500}
-footer ul{list-style:none}
-footer li{padding:5px 0}
-footer a{text-decoration:none}
-footer a:hover{color:var(--fucsia)}
-.foot-bottom{border-top:1px solid rgba(248,244,239,.14);padding-top:22px;
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}
-
-/* ---------- wa flotante ---------- */
-.wa-float{
-  position:fixed;right:22px;bottom:22px;z-index:70;width:58px;height:58px;border-radius:50%;
-  background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.24);
-  text-decoration:none;transition:.25s;
+.cierre{background:var(--tinta);color:var(--crema);padding:clamp(5.5rem,10vw,9rem) 0;
+  position:relative;overflow:hidden}
+.cierre::before{
+  content:"";position:absolute;left:50%;top:-30%;width:74vw;height:74vw;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(236,85,170,.17),transparent 62%);pointer-events:none;
 }
-.wa-float:hover{transform:scale(1.08)}
-.wa-float svg{width:30px;height:30px;fill:#fff}
+.cierre .wrap{position:relative;text-align:center}
+.cierre .kicker{color:var(--fucsia)}
+.cierre h2{margin:1rem 0 1.2rem}
+.cierre h2 em{color:var(--fucsia)}
+.cierre p{max-width:46ch;margin:0 auto 2.6rem;color:rgba(244,239,232,.68)}
+.cierre .btn-2{color:var(--crema);box-shadow:inset 0 0 0 1px rgba(244,239,232,.34)}
+.cierre .btn-2::before{background:var(--crema)}
+.cierre .btn-2:hover{color:var(--tinta)}
 
-.demo-tag{
-  position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);z-index:70;
+/* ---------- pie ---------- */
+.pie{background:var(--negro);color:rgba(244,239,232,.55);padding:4.5rem 0 2rem;font-size:.92rem}
+.pie-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.6rem;margin-bottom:3rem}
+@media(max-width:760px){.pie-g{grid-template-columns:1fr;gap:2rem}}
+.pie img{height:56px;margin-bottom:1.4rem;filter:invert(1) sepia(1) saturate(.06) brightness(1.75)}
+.pie h4{font-family:var(--ui);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--crema);font-weight:500;margin-bottom:1rem}
+.pie ul{list-style:none}
+.pie li{padding:.28rem 0}
+.pie a:hover{color:var(--fucsia)}
+@media(max-width:820px){
+  .pie li a,.contactos a{display:block;padding-block:.75rem}
+  .contactos li{padding:.2rem 0}
+}
+.pie-bajo{border-top:1px solid rgba(244,239,232,.14);padding-top:1.5rem;display:flex;
+  justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.72rem;
+  letter-spacing:.06em;color:rgba(244,239,232,.55)}
+
+/* ---------- barra de acción en móvil ---------- */
+.barra{
+  position:fixed;left:0;right:0;bottom:0;z-index:97;display:none;
+  grid-template-columns:1fr 1fr;background:var(--tinta);color:var(--crema);
+}
+.barra a{
+  padding:1.15rem .6rem;text-align:center;font-size:.66rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+}
+.barra a+a{box-shadow:inset 1px 0 0 rgba(244,239,232,.18)}
+@media(max-width:1080px){.barra{display:grid}body{padding-bottom:3.4rem}}
+
+.sello{
+  position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);z-index:98;
   writing-mode:vertical-rl;background:var(--tinta);color:var(--crema);
-  padding:14px 7px;font-size:9px;letter-spacing:.24em;text-transform:uppercase;
+  padding:.9rem .42rem;font-size:.52rem;letter-spacing:.26em;text-transform:uppercase;
 }
-@media(max-width:900px){.demo-tag{display:none}}
+@media(max-width:1080px){.sello{display:none}}
+
+/* ---------- entrada al scroll ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--sw),transform .9s var(--sw)}
+.rv.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
 
-<div class="demo-tag">Maqueta de propuesta · no es el sitio oficial</div>
+<div class="sello">Maqueta de propuesta · sitio no oficial</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top"><img src="assets/img/logo.webp" alt="Nails Art &amp; Hair Care"></a>
-    <nav>
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#inicio" aria-label="Inicio"><img class="marca-logo" src="assets/img/logo.webp" alt="Nails Art &amp; Hair Care"></a>
+    <nav class="menu">
+      <a href="#casa">La casa</a>
       <a href="#servicios">Servicios</a>
+      <a href="#disponibilidad">Disponibilidad</a>
       <a href="#trabajos">Trabajos</a>
-      <a href="#reservar">Reservar</a>
-      <a href="#ubicacion">Ubicación</a>
+      <a href="#membresias">Membresías</a>
+      <a href="#visitanos">Visítanos</a>
     </nav>
-    <a class="btn btn-p" href="#reservar">Agendar cita</a>
+    <a class="btn btn-1" href="#disponibilidad"><span>Ver </span>horarios</a>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<div id="top" class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">ARTZ Pedregal · Segundo piso</p>
-      <h1>Tu cabello &amp; uñas<br><em>merecen lo mejor</em></h1>
-      <p class="lead">Somos un spa de uñas y cuidado capilar dedicados a consentirte de pies a cabeza. Especialistas en recuperación capilar con AVEDA, TRUSS y K18.</p>
-      <div class="hero-cta">
-        <a class="btn btn-p" href="#reservar">Reservar en línea</a>
-        <a class="btn btn-wa" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-      <div class="hero-meta">
-        <div>Abierto <strong>7 días</strong></div>
-        <div>Citas al <strong>55 3869 0683</strong></div>
-        <div>Uñas · Cabello · Faciales <strong>Un solo lugar</strong></div>
-      </div>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="inicio">
+  <img class="hero-bg" src="assets/img/hero-bg.webp" alt="Manicure en gel tono lechoso, forma almendra" fetchpriority="high">
+  <div class="wrap hero-in">
+    <p class="kicker">ARTZ Pedregal · Segundo Nivel · Local 236</p>
+    <h1>Tu cabello &amp; uñas<br><span class="it">merecen lo mejor</span></h1>
+    <p class="lede hero-sub">Un spa de uñas y cuidado capilar en el corazón del Pedregal.
+      Manos, pies y cabello con AVEDA, TRUSS y K18 — de pies a cabeza, en una sola visita.</p>
+    <div class="hero-cta">
+      <a class="btn btn-claro" href="#disponibilidad">Ver horarios de hoy</a>
+      <a class="btn btn-2" href="#servicios">La carta</a>
     </div>
-    <div class="hero-fotos">
-      <img src="assets/img/hero-manos.webp" alt="Manicure nude realizado en el salón">
-      <img src="assets/img/hero-cabello.webp" alt="Cabello tratado en el salón">
-    </div>
+    <dl class="hero-datos">
+      <div><dt>Abierto</dt><dd>Los 7 días</dd></div>
+      <div><dt>Citas al</dt><dd>55 3869 0683</dd></div>
+      <div><dt>Uñas · Cabello · Faciales</dt><dd>Un solo lugar</dd></div>
+    </dl>
   </div>
-</div>
+</section>
 
-<!-- ============ MARCAS ============ -->
-<div class="marcas">
+<!-- ══════════ CREDENCIALES ══════════ -->
+<section class="cred">
   <div class="wrap">
-    <span>Trabajamos con</span>
     <ul><li>AVEDA</li><li>TRUSS</li><li>K18</li><li>GLOSSOVER</li></ul>
-  </div>
-</div>
-
-<!-- ============ SERVICIOS ============ -->
-<section id="servicios">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Carta de servicios</p>
-      <h2>De pies a cabeza,<br>en una sola visita</h2>
-      <p class="lead">Manos y pies, color y tratamiento capilar, y faciales. Elige la categoría para ver todo lo que hacemos.</p>
-    </div>
-
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-cat="unas">Uñas</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="cabello">Cabello</button>
-      <button class="tab" role="tab" aria-selected="false" data-cat="facial">Faciales</button>
-    </div>
-
-    <div class="svc-grid" id="svcGrid"></div>
-
-    <p class="nota-precios">
-      <strong>Nota para la administración:</strong> los precios no están publicados en sus redes,
-      así que quedaron como <em>“precio a confirmar”</em>. En cuanto nos pasen la lista, se cargan
-      y aparecen aquí y en el flujo de reserva. Las duraciones son estimadas y también se ajustan.
-    </p>
+    <p><b>Color y ritual capilar con AVEDA.</b> Reconstrucción molecular con <b>K18</b>.
+       Brillo y nutrición con <b>TRUSS</b>. Cuidado y protección de manos con <b>GLOSSOVER</b>.
+       No son logos pegados: es con lo que trabajamos todos los días.</p>
   </div>
 </section>
 
-<!-- ============ GALERÍA ============ -->
-<section id="trabajos" class="galeria">
+<!-- ══════════ LA CASA ══════════ -->
+<section class="sec" id="casa">
+  <div class="wrap casa-g">
+    <div class="casa-txt rv">
+      <div class="marca-sec"><span class="n">01</span><span class="kicker">La casa</span></div>
+      <h2>Consentirte de pies a cabeza</h2>
+      <p class="lede" style="margin-top:1.6rem">Somos un spa de uñas y cuidado capilar. Trabajamos
+        con líneas profesionales —AVEDA, TRUSS y K18— porque el cabello dañado no se disimula:
+        se recupera.</p>
+      <p class="lede">En la misma visita se puede hacer manicure, pedicure, color, tratamiento,
+        corte y facial. Sin brincar de lugar en lugar, sin dejar nada a medias.</p>
+      <p class="firma">Especialistas en recuperación capilar.</p>
+    </div>
+    <div class="casa-fotos rv">
+      <img src="assets/img/v-rizado.webp" alt="Cabello tratado con aceite capilar nutritivo" loading="lazy" width="760" height="1013">
+      <img src="assets/img/v-k18.webp" alt="Tratamiento de recuperación capilar K18" loading="lazy" width="760" height="1013">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICIOS ══════════ -->
+<section class="sec sec-crema2" id="servicios">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Nuestro trabajo</p>
+    <div class="rv">
+      <div class="marca-sec"><span class="n">02</span><span class="kicker">La carta</span></div>
+      <h2>Todo lo que hacemos</h2>
+      <p class="lede" style="margin-top:1.4rem">Manos y pies, color y tratamiento capilar, y faciales.
+        Cada servicio con su tiempo estimado en el sillón.</p>
+
+      <div class="tabs" role="tablist" aria-label="Categorías de servicio">
+        <button class="tab" role="tab" id="tab-unas"    aria-selected="true"  aria-controls="carta" data-cat="unas">Uñas</button>
+        <button class="tab" role="tab" id="tab-cabello" aria-selected="false" aria-controls="carta" tabindex="-1" data-cat="cabello">Cabello</button>
+        <button class="tab" role="tab" id="tab-facial"  aria-selected="false" aria-controls="carta" tabindex="-1" data-cat="facial">Faciales</button>
+      </div>
+    </div>
+
+    <div class="carta" id="carta" role="tabpanel" tabindex="0" aria-labelledby="tab-unas"></div>
+
+    <p class="aviso-precio rv"><strong>Nota para la administración:</strong> los precios no están
+      publicados en sus redes, así que quedaron como <em>“a confirmar”</em>. En cuanto nos pasen la
+      lista se cargan y aparecen aquí y en la disponibilidad. Los tiempos también se ajustan.</p>
+  </div>
+</section>
+
+<!-- ══════════ DISPONIBILIDAD ══════════ -->
+<section class="sec sec-oscura" id="disponibilidad">
+  <div class="wrap dispo-g">
+    <div class="rv">
+      <div class="marca-sec"><span class="n">03</span><span class="kicker">Disponibilidad</span></div>
+      <h2>Los horarios<br>de esta semana</h2>
+      <p class="lede" style="margin-top:1.4rem">Elige el día y mira los bloques libres. Cuando encuentres
+        el tuyo, te lo apartamos por teléfono o por WhatsApp en un minuto.</p>
+      <p class="aviso-antes">Apartamos por WhatsApp o teléfono · La reserva en línea abre muy pronto</p>
+    </div>
+
+    <div class="rv">
+      <div class="dias" id="dias" role="group" aria-label="Elige un día"></div>
+
+      <div style="margin-top:2.2rem">
+        <div class="dispo-cab">
+          <h3 id="diaTitulo">Hoy</h3>
+          <span class="libres" id="libres"></span>
+        </div>
+        <div id="franjas"></div>
+        <div class="leyenda">
+          <span class="ll"><i></i>Libre</span>
+          <span class="oc"><i></i>Ocupado</span>
+          <span class="el"><i></i>Tu selección</span>
+        </div>
+        <p class="sello-t">Disponibilidad de muestra. Al conectar la agenda del salón,
+          estos bloques se llenan y se vacían solos, en tiempo real.</p>
+      </div>
+
+      <div class="apartado" id="apartado" hidden>
+        <div>
+          <span class="pronto">Reserva en línea, muy pronto</span>
+          <p class="res" id="apartadoRes"></p>
+          <p class="nota">Por ahora las citas se apartan directamente en el salón o por teléfono.
+            Escríbenos y te confirmamos el lugar al instante — la reserva y el pago en línea abren
+            en las próximas semanas.</p>
+        </div>
+        <div class="acc">
+          <a class="btn btn-wa" id="apartadoWa" target="_blank" rel="noopener">Apartar por WhatsApp</a>
+          <a class="btn btn-claro" href="tel:+525538690683">Llamar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TRABAJOS ══════════ -->
+<section class="sec" id="trabajos">
+  <div class="wrap">
+    <div class="rv">
+      <div class="marca-sec"><span class="n">04</span><span class="kicker">Nuestro trabajo</span></div>
       <h2>Resultados reales</h2>
-      <p class="lead">Trabajos hechos en el salón. Cada cita termina con el acabado, la forma y el tono que pediste.</p>
+      <p class="lede" style="margin-top:1.4rem">Trabajos hechos en el salón. Cada cita termina con la
+        forma, el tono y el acabado que pediste.</p>
     </div>
-    <div class="gal-grid">
-      <figure class="g-alta"><img src="assets/img/gal-nude.webp" alt="Manicure gel tono nude, forma almendra"><figcaption>Gel nude · almendra</figcaption></figure>
-      <figure><img src="assets/img/gal-blancas.webp" alt="Manicure blanco perlado"><figcaption>Blanco perlado</figcaption></figure>
-      <figure><img src="assets/img/gal-esmalte.webp" alt="Esmaltado color hueso"><figcaption>Esmaltado</figcaption></figure>
-      <figure><img src="assets/img/gal-rizado.webp" alt="Tratamiento de brillo y suavidad en cabello rizado"><figcaption>Brillo &amp; suavidad</figcaption></figure>
-      <figure><img src="assets/img/gal-k18.webp" alt="Tratamiento de recuperación capilar K18"><figcaption>Recuperación K18</figcaption></figure>
-      <figure class="g-alta"><img src="assets/img/gal-manity.webp" alt="Manity, sanitizante y protector UV"><figcaption>Manity · protector UV</figcaption></figure>
-      <figure><img src="assets/img/gal-truss.webp" alt="Illuminatte Oil de TRUSS"><figcaption>TRUSS Illuminatte</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RESERVA ============ -->
-<section id="reservar" class="reserva">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Reserva en línea</p>
-      <h2>Agenda en menos<br>de un minuto</h2>
-      <p class="lead">Elige servicio, especialista y horario. Recibes un código QR: es tu cita. Lo presentas al llegar y recepción la abre al instante.</p>
-    </div>
-
-    <div class="booking">
-      <div class="pasos">
-        <div class="paso on" data-p="1"><b>01</b>Servicio</div>
-        <div class="paso" data-p="2"><b>02</b>Especialista</div>
-        <div class="paso" data-p="3"><b>03</b>Fecha y hora</div>
-        <div class="paso" data-p="4"><b>04</b>Tus datos</div>
-        <div class="paso" data-p="5"><b>05</b>Tu QR</div>
-      </div>
-
-      <!-- paso 1 -->
-      <div class="panel" data-panel="1">
-        <h3>¿Qué te vamos a hacer?</h3>
-        <p class="sub">Puedes agregar más servicios al llegar.</p>
-        <div class="opciones" id="optServicios"></div>
-        <div class="acciones"><span></span><button class="btn btn-p" data-next disabled>Continuar</button></div>
-      </div>
-
-      <!-- paso 2 -->
-      <div class="panel" data-panel="2" hidden>
-        <h3>¿Con quién?</h3>
-        <p class="sub">Si no tienes preferencia, te asignamos a quien esté libre a esa hora.</p>
-        <div class="opciones" id="optEspecialistas"></div>
-        <div class="acciones"><button class="btn btn-g" data-prev>Atrás</button><button class="btn btn-p" data-next disabled>Continuar</button></div>
-      </div>
-
-      <!-- paso 3 -->
-      <div class="panel" data-panel="3" hidden>
-        <h3>Elige día y hora</h3>
-        <p class="sub">Sólo aparecen días y horas dentro del horario del salón.</p>
-        <div class="cal">
-          <div>
-            <div class="cal-head">
-              <button class="cal-nav" id="mesPrev" aria-label="Mes anterior">&#8592;</button>
-              <strong id="mesLabel"></strong>
-              <button class="cal-nav" id="mesNext" aria-label="Mes siguiente">&#8594;</button>
-            </div>
-            <div class="dias" id="dowRow"></div>
-            <div class="dias" id="gridDias"></div>
-          </div>
-          <div>
-            <div class="cal-head"><strong id="horaLabel">Horarios</strong></div>
-            <div class="horas" id="gridHoras"><p class="vacio">Selecciona un día para ver los horarios libres.</p></div>
-          </div>
-        </div>
-        <div class="acciones"><button class="btn btn-g" data-prev>Atrás</button><button class="btn btn-p" data-next disabled>Continuar</button></div>
-      </div>
-
-      <!-- paso 4 -->
-      <div class="panel" data-panel="4" hidden>
-        <h3>Tus datos</h3>
-        <p class="sub">Para confirmarte la cita y mandarte el recordatorio.</p>
-        <div class="resumen" id="resumen"></div>
-        <div class="campos">
-          <div><label for="fNombre">Nombre completo</label><input id="fNombre" autocomplete="name" placeholder="Ana Martínez"></div>
-          <div><label for="fTel">WhatsApp</label><input id="fTel" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678"></div>
-          <div class="ancho-full"><label for="fMail">Correo <small style="text-transform:none;letter-spacing:0">(opcional)</small></label><input id="fMail" type="email" autocomplete="email" placeholder="ana@correo.com"></div>
-          <div class="ancho-full"><label for="fNota">Nota para tu especialista (opcional)</label><input id="fNota" placeholder="Traigo gel de hace 3 semanas, quiero retiro"></div>
-        </div>
-        <div class="acciones"><button class="btn btn-g" data-prev>Atrás</button><button class="btn btn-p" id="btnConfirmar" disabled>Confirmar cita</button></div>
-      </div>
-
-      <!-- paso 5 -->
-      <div class="panel" data-panel="5" hidden>
-        <div class="ticket">
-          <div class="ticket-info">
-            <div class="ok-badge">&#10003; Cita confirmada</div>
-            <h3 id="tkNombre">Tu cita</h3>
-            <p class="sub" style="margin-bottom:0">Te esperamos en ARTZ Pedregal, segundo piso, local 236.</p>
-            <ul class="detalle" id="tkDetalle"></ul>
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn btn-wa" id="tkWa" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-              <button class="btn btn-g" id="tkIcs">Agregar al calendario</button>
-              <button class="btn btn-g" id="tkOtra">Agendar otra</button>
-            </div>
-          </div>
-          <div class="ticket-qr">
-            <div id="qrBox"></div>
-            <div class="folio" id="tkFolio"></div>
-            <small>Presenta este código<br>al llegar a recepción</small>
-          </div>
-        </div>
-      </div>
-
+    <div class="mosaico rv">
+      <figure class="mos m-a"><img src="assets/img/gal-rizado.webp" alt="Cabello tratado con aceite capilar nutritivo" loading="lazy"><figcaption>Brillo &amp; suavidad</figcaption></figure>
+      <figure class="mos m-b"><img src="assets/img/v-blancas.webp" alt="Manicure blanco perlado" loading="lazy"><figcaption>Blanco perlado</figcaption></figure>
+      <figure class="mos m-c"><img src="assets/img/gal-nude.webp" alt="Gel tono nude, forma almendra" loading="lazy"><figcaption>Gel nude · almendra</figcaption></figure>
+      <figure class="mos m-d"><img src="assets/img/gal-esmalte.webp" alt="Esmaltado color hueso" loading="lazy"><figcaption>Esmaltado</figcaption></figure>
+      <figure class="mos m-e"><img src="assets/img/gal-nude.webp" alt="Manicure en gel tono nude" loading="lazy"><figcaption>Gel nude · brillo</figcaption></figure>
+      <figure class="mos m-f"><img src="assets/img/gal-k18.webp" alt="Recuperación capilar con K18" loading="lazy"><figcaption>Recuperación K18</figcaption></figure>
+      <figure class="mos m-g"><img src="assets/img/gal-manity.webp" alt="Manity, sanitizante y protector UV" loading="lazy"><figcaption>Manity · protector UV</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ============ UBICACIÓN ============ -->
-<section id="ubicacion">
+<!-- ══════════ MEMBRESÍAS ══════════ -->
+<section class="sec sec-crema2" id="membresias">
   <div class="wrap">
-    <div class="ubica-grid">
-      <div>
-        <p class="eyebrow">Visítanos</p>
-        <h2>ARTZ Pedregal,<br>segundo piso</h2>
-        <p class="lead" style="margin:18px 0 30px">Anillo Periférico 3720, Local 236, Jardines del Pedregal, Álvaro Obregón, CDMX, CP 01900.</p>
+    <div class="rv">
+      <div class="marca-sec"><span class="n">05</span><span class="kicker">Membresías y paquetes</span></div>
+      <h2>Para las que vienen siempre</h2>
+      <p class="lede" style="margin-top:1.4rem">Tres formas de mantener manos, pies y cabello al día
+        todo el año, a mejor precio que cita por cita.</p>
+    </div>
 
-        <h4 style="font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-45);margin-bottom:4px">Horarios</h4>
-        <ul class="horario" id="horarioLista"></ul>
+    <div class="planes rv">
+      <article class="plan">
+        <span class="plan-etq">Paquete</span>
+        <h3>Las Cuatro</h3>
+        <p class="plan-n">Cuatro manicures para usar cuando quieras, sin fecha de vencimiento corta.</p>
+        <p class="plan-p"><span class="raya"></span><small>Precio a definir</small></p>
+        <ul>
+          <li>4 sesiones de manicure</li>
+          <li>Se pagan una vez, se usan todo el año</li>
+          <li>Transferible a una amiga</li>
+        </ul>
+      </article>
 
-        <ul class="contacto-lista">
+      <article class="plan destacado">
+        <span class="plan-etq">Membresía · la favorita</span>
+        <h3>El Ritual</h3>
+        <p class="plan-n">Manos y pies impecables todo el mes, más un tratamiento capilar.</p>
+        <p class="plan-p"><span class="raya"></span><small>Mensual · precio a definir</small></p>
+        <ul>
+          <li>2 manicures y 1 pedicure al mes</li>
+          <li>1 tratamiento K18 o TRUSS</li>
+          <li>10% en productos de la casa</li>
+          <li>Horario preferente los fines de semana</li>
+        </ul>
+      </article>
+
+      <article class="plan">
+        <span class="plan-etq">Membresía</span>
+        <h3>La Casa</h3>
+        <p class="plan-n">Todo incluido: uñas, cabello y facial, para quien vive aquí.</p>
+        <p class="plan-p"><span class="raya"></span><small>Mensual · precio a definir</small></p>
+        <ul>
+          <li>Manicure y pedicure ilimitados</li>
+          <li>1 color o corte al mes</li>
+          <li>1 facial al mes</li>
+          <li>15% en productos y en servicios extra</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="pago rv">
+      <span class="et">Pago en línea</span>
+      <p>Membresías, paquetes y tarjetas de regalo se cobran
+        con pasarela de pago —tarjeta, meses sin intereses y transferencia— y el dinero cae
+        <b>directo a la cuenta del salón</b>, sin intermediarios. Se activa junto con la reserva en línea.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VISÍTANOS ══════════ -->
+<section class="sec" id="visitanos">
+  <div class="wrap">
+    <div class="rv">
+      <div class="marca-sec"><span class="n">06</span><span class="kicker">Visítanos</span></div>
+      <h2>Se encuentra en<br>ARTZ Pedregal</h2>
+    </div>
+    <div class="visita-g" style="margin-top:2.4rem">
+      <div class="rv">
+        <div class="plaza">
+          <p class="et">La cita es aquí</p>
+          <p class="dir">ARTZ Pedregal<br><span>Segundo Nivel</span> · Local 236</p>
+          <p class="calle">Anillo Periférico Sur 3720, Jardines del Pedregal,
+            Álvaro Obregón, CDMX, C.P. 01900.</p>
+
+          <ol class="llegar">
+            <li>Entra por <b>Periférico</b>. Hay estacionamiento de autoservicio y valet;
+              el pago se hace desde la app <b>Parco</b>.</li>
+            <li>Sube al <b>Segundo Nivel</b> — el de las boutiques de arriba, dos niveles
+              por encima de la planta baja.</li>
+            <li>Camina hacia la zona de belleza: estamos en el <b>local 236</b>,
+              junto a <b>Funever Dreaming</b> y cerca de <b>Caudalie</b> y <b>MAC</b>.</li>
+          </ol>
+
+          <p class="ojo"><b>Un detalle:</b> en el directorio de la plaza aparecemos como
+            <b>AVEDA</b>, no como Nails Art &amp; Hair Care. Si preguntas en informes,
+            pide AVEDA, Segundo Nivel.</p>
+        </div>
+
+        <table class="tabla">
+          <thead><tr><th scope="col">Día</th><th scope="col" style="text-align:right">Horario</th></tr></thead>
+          <tbody id="horario"></tbody>
+        </table>
+
+        <ul class="contactos">
           <li><span>Teléfono</span><a href="tel:+525538690683">55 3869 0683</a></li>
           <li><span>Citas</span><a href="tel:+525526532946">55 2653 2946</a></li>
           <li><span>WhatsApp</span><a href="https://wa.me/5215530823589" target="_blank" rel="noopener">55 3082 3589</a></li>
@@ -526,44 +782,49 @@ footer a:hover{color:var(--fucsia)}
           <li><span>Instagram</span><a href="https://www.instagram.com/artznailsandhaircare/" target="_blank" rel="noopener">@artznailsandhaircare</a></li>
         </ul>
 
-        <a class="btn btn-g" style="margin-top:26px" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=ARTZ+Pedregal+Anillo+Periferico+3720+Jardines+del+Pedregal+CDMX">Cómo llegar</a>
+        <a class="btn btn-2" style="margin-top:2rem" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/search/?api=1&query=ARTZ+Pedregal+Anillo+Periferico+Sur+3720+Jardines+del+Pedregal+CDMX">Cómo llegar</a>
       </div>
-      <div>
-        <iframe class="mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ARTZ Pedregal"
-          src="https://www.google.com/maps?q=Anillo%20Perif%C3%A9rico%203720%2C%20Jardines%20del%20Pedregal%2C%20CDMX&output=embed"></iframe>
+      <div class="rv">
+        <iframe class="mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de ARTZ Pedregal"
+          src="https://www.google.com/maps?q=ARTZ%20Pedregal%2C%20Anillo%20Perif%C3%A9rico%20Sur%203720%2C%20Jardines%20del%20Pedregal%2C%20CDMX&output=embed"></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CIERRE ============ -->
+<!-- ══════════ CIERRE ══════════ -->
 <section class="cierre">
   <div class="wrap">
-    <h2>¿Lista para consentirte?</h2>
-    <p>Reserva en línea en un minuto, o escríbenos por WhatsApp y te apartamos el lugar.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn-p" href="#reservar">Reservar en línea</a>
-      <a class="btn btn-wa" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <p class="kicker">Te esperamos</p>
+    <h2>Tu lugar<br>te <em>está esperando</em></h2>
+    <p>Mira los bloques libres de hoy y apártalo por WhatsApp o por teléfono.
+       Te lo confirmamos al instante.</p>
+    <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-claro" href="#disponibilidad">Ver disponibilidad</a>
+      <a class="btn btn-2" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20apartar%20una%20cita" target="_blank" rel="noopener">Escribir por WhatsApp</a>
     </div>
   </div>
 </section>
 
-<footer>
+<footer class="pie">
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="pie-g">
       <div>
         <img src="assets/img/logo.webp" alt="Nails Art &amp; Hair Care">
-        <p>Spa de uñas y cuidado capilar.<br>Especialistas en recuperación capilar.</p>
+        <p>Spa de uñas y cuidado capilar.<br>Especialistas en recuperación capilar.<br>
+          ARTZ Pedregal, Segundo Nivel, local 236.</p>
       </div>
       <div>
-        <h4>Servicios</h4>
+        <h4>La carta</h4>
         <ul>
           <li><a href="#servicios">Manicure y pedicure</a></li>
-          <li><a href="#servicios">Uñas de gel y acrílico</a></li>
+          <li><a href="#servicios">Gel, acrílico y dip</a></li>
           <li><a href="#servicios">Diseño de color</a></li>
           <li><a href="#servicios">Tratamientos y corte</a></li>
-          <li><a href="#servicios">Faciales</a></li>
+          <li><a href="#servicios">Faciales y cejas</a></li>
+          <li><a href="#membresias">Membresías y paquetes</a></li>
         </ul>
       </div>
       <div>
@@ -572,312 +833,233 @@ footer a:hover{color:var(--fucsia)}
           <li><a href="tel:+525538690683">55 3869 0683</a></li>
           <li><a href="https://wa.me/5215530823589" target="_blank" rel="noopener">WhatsApp 55 3082 3589</a></li>
           <li><a href="mailto:aveda.artz@gmail.com">aveda.artz@gmail.com</a></li>
-          <li><a href="https://www.instagram.com/artznailsandhaircare/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.instagram.com/artznailsandhaircare/" target="_blank" rel="noopener">@artznailsandhaircare</a></li>
         </ul>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>ARTZ Pedregal · Anillo Periférico 3720, Local 236 · CDMX</span>
+    <div class="pie-bajo">
+      <span>Anillo Periférico Sur 3720 · Jardines del Pedregal · Álvaro Obregón · CDMX</span>
       <span>Maqueta de propuesta — sitio no oficial</span>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-</a>
+<nav class="barra" aria-label="Acciones rápidas">
+  <a href="#disponibilidad">Ver horarios</a>
+  <a href="https://wa.me/5215530823589?text=Hola%2C%20quiero%20apartar%20una%20cita" target="_blank" rel="noopener">WhatsApp</a>
+</nav>
 
-<script src="assets/js/qrcode.js"></script>
 <script>
-/* ============================================================
-   DATOS DEL NEGOCIO  (verificados en Facebook, Instagram y Fresha)
+/* ════════════════════════════════════════════════════════════
+   DATOS DEL NEGOCIO — verificados en Facebook, Instagram y Fresha.
    Para cargar precios reales: pon el número en `precio`.
-   ============================================================ */
-const HORARIO = {           // 0 = domingo … 6 = sábado
-  0:[11,17], 1:[9,19], 2:[9,19], 3:[9,19], 4:[9,19], 5:[9,19], 6:[9,17]
-};
-const NOMBRE_DIA = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
-
-const SERVICIOS = [
-  // ---- UÑAS ----
-  {id:'mani',   cat:'unas', n:'Manicure',                 d:45,  precio:null, desc:'Limado, cutícula, hidratación y esmaltado tradicional.'},
-  {id:'pedi',   cat:'unas', n:'Pedicure',                 d:60,  precio:null, desc:'Spa de pies completo con exfoliación y esmaltado.'},
-  {id:'manipedi',cat:'unas',n:'Manicure y pedicure',      d:105, precio:null, desc:'Manos y pies en la misma visita, de pies a cabeza.'},
-  {id:'gel',    cat:'unas', n:'Uñas de gel',              d:75,  precio:null, desc:'Esmaltado en gel de larga duración sobre uña natural.'},
-  {id:'gelext', cat:'unas', n:'Extensiones de gel',       d:105, precio:null, desc:'Extensión con gel: forma, largo y acabado a tu gusto.'},
-  {id:'acril',  cat:'unas', n:'Uñas acrílicas',           d:105, precio:null, desc:'Acrílico resistente, ideal para largos y formas marcadas.'},
-  {id:'dip',    cat:'unas', n:'Dip powder',               d:75,  precio:null, desc:'Sistema en polvo, sin lámpara y con acabado natural.'},
-  {id:'art',    cat:'unas', n:'Nail art / diseño',        d:30,  precio:null, desc:'Diseño a mano, incrustaciones y detalles por uña.'},
-  {id:'retiro', cat:'unas', n:'Retiro de material',       d:30,  precio:null, desc:'Retiro seguro de gel, acrílico o dip sin dañar la uña.'},
-  {id:'manic',  cat:'unas', n:'Manicure caballero',       d:40,  precio:null, desc:'Limpieza, corte y pulido para manos de caballero.'},
-  {id:'pedic',  cat:'unas', n:'Pedicure caballero',       d:55,  precio:null, desc:'Cuidado completo de pies para caballero.'},
-  // ---- CABELLO ----  (publicados por ellos: "Nuevos servicios: diseño de color, tratamientos, corte")
-  {id:'color',  cat:'cabello', n:'Diseño de color',       d:150, precio:null, desc:'Balayage, mechas y tonos a medida con línea profesional.'},
-  {id:'retoque',cat:'cabello', n:'Retoque de raíz',       d:90,  precio:null, desc:'Cobertura de raíz manteniendo tu tono actual.'},
-  {id:'k18',    cat:'cabello', n:'Tratamiento K18',       d:60,  precio:null, desc:'Recuperación molecular para cabello dañado o decolorado.'},
-  {id:'truss',  cat:'cabello', n:'Tratamiento TRUSS',     d:60,  precio:null, desc:'Nutrición profunda y brillo con Illuminatte Oil.'},
-  {id:'aveda',  cat:'cabello', n:'Ritual AVEDA',          d:75,  precio:null, desc:'Diagnóstico y ritual capilar con productos AVEDA.'},
-  {id:'corte',  cat:'cabello', n:'Corte y peinado',       d:60,  precio:null, desc:'Corte a tu tipo de cara, secado y terminado.'},
-  {id:'peinado',cat:'cabello', n:'Peinado / brushing',    d:45,  precio:null, desc:'Terminado con cepillo secador para evento o diario.'},
-  // ---- FACIALES ----
-  {id:'facial', cat:'facial', n:'Facial de limpieza',     d:60,  precio:null, desc:'Limpieza profunda, exfoliación e hidratación.'},
-  {id:'facialh',cat:'facial', n:'Facial hidratante',      d:60,  precio:null, desc:'Rehidratación y luminosidad para piel apagada.'},
-  {id:'cejas',  cat:'facial', n:'Diseño de cejas',        d:30,  precio:null, desc:'Perfilado y diseño según tu rostro.'}
-];
-
-const ESPECIALISTAS = [
-  {id:'any',   n:'Quien esté disponible', s:'Te asignamos al llegar'},
-  {id:'unas',  n:'Especialista en uñas',  s:'Gel, acrílico y nail art'},
-  {id:'color', n:'Especialista en color', s:'Balayage, mechas y tono'},
-  {id:'trat',  n:'Especialista capilar',  s:'K18, TRUSS y AVEDA'}
-];
-
+   ════════════════════════════════════════════════════════════ */
+const HORARIO = { 0:[11,17], 1:[9,19], 2:[9,19], 3:[9,19], 4:[9,19], 5:[9,19], 6:[9,17] };
+const DIA_LARGO = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const DIA_CORTO = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+const MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const WA = '5215530823589';
 
-/* ============================================================
-   ESTADO
-   ============================================================ */
-const S = {paso:1, servicio:null, especialista:null, fecha:null, hora:null};
+const SERVICIOS = [
+  // ── UÑAS ──
+  {c:'unas', n:'Manicure',               d:45,  p:null, t:'Limado, cutícula, hidratación y esmaltado tradicional.'},
+  {c:'unas', n:'Pedicure',               d:60,  p:null, t:'Spa de pies completo, con exfoliación y esmaltado.'},
+  {c:'unas', n:'Manicure y pedicure',    d:105, p:null, t:'Manos y pies en la misma visita.'},
+  {c:'unas', n:'Uñas de gel',            d:75,  p:null, t:'Esmaltado en gel de larga duración sobre uña natural.'},
+  {c:'unas', n:'Extensiones de gel',     d:105, p:null, t:'Forma, largo y acabado a tu gusto.'},
+  {c:'unas', n:'Uñas acrílicas',         d:105, p:null, t:'Resistente, ideal para largos y formas marcadas.'},
+  {c:'unas', n:'Dip powder',             d:75,  p:null, t:'Sistema en polvo, sin lámpara, acabado natural.'},
+  {c:'unas', n:'Nail art',               d:30,  p:null, t:'Diseño a mano, incrustaciones y detalle por uña.'},
+  {c:'unas', n:'Retiro de material',     d:30,  p:null, t:'Retiro seguro de gel, acrílico o dip sin dañar la uña.'},
+  {c:'unas', n:'Manicure caballero',     d:40,  p:null, t:'Limpieza, corte y pulido.'},
+  {c:'unas', n:'Pedicure caballero',     d:55,  p:null, t:'Cuidado completo de pies.'},
+  // ── CABELLO ── (publicados por ellos: "Nuevos servicios: diseño de color, tratamientos, corte")
+  {c:'cabello', n:'Diseño de color',     d:150, p:null, t:'Balayage, mechas y tonos a medida con línea profesional.'},
+  {c:'cabello', n:'Retoque de raíz',     d:90,  p:null, t:'Cobertura de raíz manteniendo tu tono actual.'},
+  {c:'cabello', n:'Tratamiento K18',     d:60,  p:null, t:'Recuperación molecular para cabello dañado o decolorado.'},
+  {c:'cabello', n:'Tratamiento TRUSS',   d:60,  p:null, t:'Nutrición profunda y brillo con Illuminatte Oil.'},
+  {c:'cabello', n:'Ritual AVEDA',        d:75,  p:null, t:'Diagnóstico y ritual capilar con productos AVEDA.'},
+  {c:'cabello', n:'Corte y peinado',     d:60,  p:null, t:'Corte a tu tipo de cara, secado y terminado.'},
+  {c:'cabello', n:'Brushing',            d:45,  p:null, t:'Terminado con cepillo secador, para evento o diario.'},
+  // ── FACIALES ──
+  {c:'facial', n:'Facial de limpieza',   d:60,  p:null, t:'Limpieza profunda, exfoliación e hidratación.'},
+  {c:'facial', n:'Facial hidratante',    d:60,  p:null, t:'Rehidratación y luminosidad para piel apagada.'},
+  {c:'facial', n:'Diseño de cejas',      d:30,  p:null, t:'Perfilado y diseño según tu rostro.'}
+];
 
-/* ---------- catálogo ---------- */
-const grid = document.getElementById('svcGrid');
-function pintaCatalogo(cat){
-  grid.innerHTML = SERVICIOS.filter(s=>s.cat===cat).map(s=>`
-    <article class="svc">
-      <div class="svc-top">
-        <h3>${s.n}</h3>
-        ${s.precio!==null
-          ? `<div class="precio">$${s.precio}</div>`
-          : `<div class="precio pend">Precio a confirmar</div>`}
-      </div>
-      <p>${s.desc}</p>
-      <div class="dur">${s.d} min aprox.</div>
+/* ---------- carta de servicios ---------- */
+const carta = document.getElementById('carta');
+function pintaCarta(cat){
+  carta.innerHTML = SERVICIOS.filter(s=>s.c===cat).map(s=>`
+    <article class="plato">
+      <h3>${s.n}</h3>
+      <span class="precio">${s.p!==null?'$'+s.p:'—'}</span>
+      <p>${s.t} <span class="dur" style="margin-left:.4rem">${s.d} min</span></p>
     </article>`).join('');
 }
-document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
-  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected','false'));
-  t.setAttribute('aria-selected','true');
-  pintaCatalogo(t.dataset.cat);
-}));
-pintaCatalogo('unas');
+const TABS = [...document.querySelectorAll('.tab')];
+function activaTab(t){
+  TABS.forEach(x=>{ x.setAttribute('aria-selected', String(x===t)); x.tabIndex = x===t ? 0 : -1; });
+  carta.setAttribute('aria-labelledby', t.id);
+  pintaCarta(t.dataset.cat);
+}
+TABS.forEach((t,i)=>{
+  t.addEventListener('click', ()=>activaTab(t));
+  t.addEventListener('keydown', e=>{
+    const d = e.key==='ArrowRight' ? 1 : e.key==='ArrowLeft' ? -1 : 0;
+    if(!d) return;
+    e.preventDefault();
+    const n = TABS[(i+d+TABS.length)%TABS.length];
+    activaTab(n); n.focus();
+  });
+});
+pintaCarta('unas');
 
-/* ---------- horarios en la sección de ubicación ---------- */
-const hoy = new Date().getDay();
-document.getElementById('horarioLista').innerHTML = [1,2,3,4,5,6,0].map(d=>{
+/* ---------- horarios de la semana (tabla) ---------- */
+const hoyDow = new Date().getDay();
+document.getElementById('horario').innerHTML = [1,2,3,4,5,6,0].map(d=>{
   const [a,b] = HORARIO[d];
-  return `<li class="${d===hoy?'hoy':''}"><span>${NOMBRE_DIA[d]}</span><span>${a}:00 – ${b}:00</span></li>`;
+  const nom = DIA_LARGO[d][0].toUpperCase()+DIA_LARGO[d].slice(1);
+  return `<tr class="${d===hoyDow?'hoy':''}"><td>${nom}</td><td>${a}:00 – ${b}:00</td></tr>`;
 }).join('');
 
-/* ---------- paso 1: servicios ---------- */
-document.getElementById('optServicios').innerHTML = SERVICIOS.map(s=>`
-  <button class="opt" aria-pressed="false" data-id="${s.id}">
-    <strong>${s.n}</strong>
-    <small>${s.d} min · ${s.precio!==null?'$'+s.precio:'precio a confirmar'}</small>
-  </button>`).join('');
+/* ════════════════════════════════════════════════════════════
+   DISPONIBILIDAD
+   Los bloques ocupados son simulados de forma determinista para que
+   la agenda se vea como una agenda real. Cuando se conecte el sistema
+   del salón, `ocupado()` se reemplaza por la consulta real.
+   ════════════════════════════════════════════════════════════ */
+const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const HOY = new Date(); HOY.setHours(0,0,0,0);
 
-/* ---------- paso 2: especialistas ---------- */
-document.getElementById('optEspecialistas').innerHTML = ESPECIALISTAS.map(e=>`
-  <button class="opt" aria-pressed="false" data-id="${e.id}">
-    <strong>${e.n}</strong><small>${e.s}</small>
-  </button>`).join('');
-
-function grupoSeleccion(cont, campo){
-  cont.addEventListener('click', ev=>{
-    const b = ev.target.closest('.opt'); if(!b) return;
-    cont.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));
-    b.setAttribute('aria-pressed','true');
-    S[campo] = b.dataset.id;
-    if(campo==='servicio'){ S.fecha=null; S.hora=null; }
-    validar();
-  });
+function ocupado(fecha, minuto){
+  let h = 2166136261;
+  const k = fecha + '#' + minuto;
+  for (let i=0;i<k.length;i++){ h ^= k.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return ((h >>> 0) % 100) < 34;
 }
-grupoSeleccion(document.getElementById('optServicios'),'servicio');
-grupoSeleccion(document.getElementById('optEspecialistas'),'especialista');
-
-/* ---------- paso 3: calendario ---------- */
-let cursor = new Date(); cursor.setDate(1);
-const DOW = ['D','L','M','M','J','V','S'];
-document.getElementById('dowRow').innerHTML = DOW.map(d=>`<div class="dow">${d}</div>`).join('');
-
-const iso = d => d.toISOString().slice(0,10);
-const hoyISO = iso(new Date());
-
-function pintaMes(){
-  const y = cursor.getFullYear(), m = cursor.getMonth();
-  document.getElementById('mesLabel').textContent =
-    cursor.toLocaleDateString('es-MX',{month:'long',year:'numeric'});
-  const primero = new Date(y,m,1).getDay();
-  const dias = new Date(y,m+1,0).getDate();
-  let html = '<div></div>'.repeat(primero);
-  for(let d=1; d<=dias; d++){
-    const f = new Date(y,m,d);
-    const s = iso(f);
-    const pasado = s < hoyISO;
-    html += `<button class="dia" data-f="${s}" ${pasado?'disabled':''}
-             aria-pressed="${S.fecha===s}">${d}</button>`;
+function slots(fechaISO){
+  const d = new Date(fechaISO + 'T12:00:00');
+  const [ini, fin] = HORARIO[d.getDay()];
+  const ahora = new Date();
+  const esHoy = fechaISO === iso(ahora);
+  const minAhora = ahora.getHours()*60 + ahora.getMinutes();
+  const out = [];
+  for (let m = ini*60; m + 45 <= fin*60; m += 30){
+    // 60 min de colchón: no se ofrece una hora que ya pasó ni la inmediata
+    const pasado = esHoy && m <= minAhora + 60;
+    out.push({
+      m, pasado,
+      hora: `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`,
+      libre: !pasado && !ocupado(fechaISO, m)
+    });
   }
-  document.getElementById('gridDias').innerHTML = html;
+  return out;
 }
-document.getElementById('mesPrev').onclick = ()=>{cursor.setMonth(cursor.getMonth()-1);pintaMes()};
-document.getElementById('mesNext').onclick = ()=>{cursor.setMonth(cursor.getMonth()+1);pintaMes()};
-pintaMes();
 
-document.getElementById('gridDias').addEventListener('click', ev=>{
-  const b = ev.target.closest('.dia'); if(!b || b.disabled) return;
-  S.fecha = b.dataset.f; S.hora = null;
-  pintaMes(); pintaHoras(); validar();
+const DIAS = Array.from({length:14}, (_,i)=>{
+  const d = new Date(HOY); d.setDate(d.getDate()+i);
+  const f = iso(d);
+  return { f, d, libres: slots(f).filter(s=>s.libre && !s.pasado).length };
 });
 
-/* Slots simulados como ocupados — determinista por fecha, para que la demo
-   se vea como una agenda real y no como un salón vacío. */
-function ocupado(fechaISO, min){
-  let h = 0;
-  const k = fechaISO + '|' + min;
-  for(let i=0;i<k.length;i++){ h = (h*31 + k.charCodeAt(i)) % 100000; }
-  return h % 100 < 32;
-}
-function pintaHoras(){
-  const cont = document.getElementById('gridHoras');
-  if(!S.fecha){ cont.innerHTML = '<p class="vacio">Selecciona un día para ver los horarios libres.</p>'; return; }
-  const f = new Date(S.fecha + 'T12:00:00');
-  const [ini,fin] = HORARIO[f.getDay()];
-  const svc = SERVICIOS.find(s=>s.id===S.servicio);
-  const dur = svc ? svc.d : 60;
-  document.getElementById('horaLabel').textContent =
-    f.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'});
+// abrir en el primer día con disponibilidad real: hoy a las 6pm no hay nada que enseñar
+const PRIMERO = DIAS.find(d => d.libres >= 3) || DIAS.find(d => d.libres > 0) || DIAS[0];
+let sel = { fecha: PRIMERO.f, hora: null };
 
-  let html = '';
-  for(let m = ini*60; m + dur <= fin*60; m += 30){
-    const hh = String(Math.floor(m/60)).padStart(2,'0');
-    const mm = String(m%60).padStart(2,'0');
-    const t = `${hh}:${mm}`;
-    const libre = !ocupado(S.fecha, m);
-    html += `<button class="hora" data-h="${t}" ${libre?'':'disabled'}
-             aria-pressed="${S.hora===t}">${t}</button>`;
-  }
-  cont.innerHTML = html || '<p class="vacio">Ese día ya no alcanza el tiempo del servicio. Prueba otro día.</p>';
+const elDias = document.getElementById('dias');
+elDias.innerHTML = DIAS.map((x,i)=>`
+  <button class="dia" data-f="${x.f}" aria-pressed="${x.f===PRIMERO.f}">
+    <small>${i===0 ? 'Hoy' : DIA_CORTO[x.d.getDay()]}</small>
+    <b>${x.d.getDate()}</b>
+    <i>${x.libres} ${x.libres===1?'libre':'libres'}</i>
+  </button>`).join('');
+
+const elFranjas  = document.getElementById('franjas');
+const elTitulo   = document.getElementById('diaTitulo');
+const elLibres   = document.getElementById('libres');
+const elApartado = document.getElementById('apartado');
+
+function tituloDe(fechaISO){
+  // "Mañana" no se usa como día: chocaría con la franja "Mañana" de la rejilla
+  const d = new Date(fechaISO + 'T12:00:00');
+  if (fechaISO === DIAS[0].f) return 'Hoy';
+  const t = `${DIA_LARGO[d.getDay()]} ${d.getDate()} de ${MES[d.getMonth()]}`;
+  return t[0].toUpperCase() + t.slice(1);
 }
-document.getElementById('gridHoras').addEventListener('click', ev=>{
-  const b = ev.target.closest('.hora'); if(!b || b.disabled) return;
-  S.hora = b.dataset.h; pintaHoras(); validar();
+function frase(fechaISO){
+  const d = new Date(fechaISO + 'T12:00:00');
+  return `${DIA_LARGO[d.getDay()]} ${d.getDate()} de ${MES[d.getMonth()]}`;
+}
+
+const FRANJAS = [
+  {n:'Mañana', a:0,    b:13*60},
+  {n:'Tarde',  a:13*60, b:24*60}
+];
+function pintaDia(){
+  const s = slots(sel.fecha).filter(x=>!x.pasado);   // las horas idas no se muestran
+  const libres = s.filter(x=>x.libre).length;
+  elTitulo.textContent = tituloDe(sel.fecha);
+  elLibres.textContent = libres ? `${libres} ${libres===1?'bloque libre':'bloques libres'}` : '';
+
+  if(!s.length || !libres){
+    const sig = DIAS.find(d => d.f > sel.fecha && d.libres > 0);
+    elFranjas.innerHTML = `<div class="lleno">
+      ${s.length ? '<b>Este día ya se llenó.</b>' : '<b>Por hoy ya cerramos la agenda.</b>'}
+      ${sig ? `El siguiente lugar libre es <b>${frase(sig.f)}</b>.` : ''}
+      Escríbenos y te avisamos si se libera un espacio.</div>`;
+    sel.hora = null; pintaApartado(); return;
+  }
+
+  elFranjas.innerHTML = FRANJAS.map(f=>{
+    const t = s.filter(x => x.m >= f.a && x.m < f.b);
+    if(!t.length) return '';
+    const l = t.filter(x=>x.libre).length;
+    return `<div class="franja">
+      <div class="franja-t"><span>${f.n}</span><span>${l} de ${t.length} libres</span></div>
+      <div class="bloques">${t.map(x=>`
+        <button class="bloque" data-h="${x.hora}" ${x.libre?'':'disabled'}
+          aria-pressed="${sel.hora===x.hora}"
+          aria-label="${x.libre?'Apartar las ':''}${x.hora}${x.libre?'':' — ocupado'}">${x.hora}</button>`).join('')}
+      </div></div>`;
+  }).join('');
+  pintaApartado();
+}
+
+function pintaApartado(){
+  if (!sel.hora){ elApartado.hidden = true; return; }
+  elApartado.hidden = false;
+  document.getElementById('apartadoRes').innerHTML =
+    `Quiero mi lugar el <b>${frase(sel.fecha)}</b> a las <b>${sel.hora}</b>.`;
+  const msg = `Hola, vi la disponibilidad en su página. Quiero apartar una cita el ${frase(sel.fecha)} a las ${sel.hora}.`;
+  document.getElementById('apartadoWa').href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+
+elDias.addEventListener('click', e=>{
+  const b = e.target.closest('.dia'); if(!b) return;
+  sel = { fecha: b.dataset.f, hora: null };
+  elDias.querySelectorAll('.dia').forEach(x=>x.setAttribute('aria-pressed', String(x===b)));
+  pintaDia();
 });
+elFranjas.addEventListener('click', e=>{
+  const b = e.target.closest('.bloque'); if(!b || b.disabled) return;
+  sel.hora = (sel.hora === b.dataset.h) ? null : b.dataset.h;
+  elFranjas.querySelectorAll('.bloque').forEach(x=>
+    x.setAttribute('aria-pressed', String(x.dataset.h === sel.hora)));
+  pintaApartado();
+  if (sel.hora) elApartado.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
+pintaDia();
 
-/* ---------- navegación de pasos ---------- */
-function irA(n){
-  S.paso = n;
-  document.querySelectorAll('.panel').forEach(p=>p.hidden = (+p.dataset.panel !== n));
-  document.querySelectorAll('.paso').forEach(p=>{
-    const i = +p.dataset.p;
-    p.classList.toggle('on', i===n);
-    p.classList.toggle('done', i<n);
-  });
-  if(n===4) pintaResumen();
-  document.querySelector('.booking').scrollIntoView({behavior:'smooth', block:'start'});
-  validar();
-}
-document.querySelectorAll('[data-next]').forEach(b=>b.onclick = ()=>irA(S.paso+1));
-document.querySelectorAll('[data-prev]').forEach(b=>b.onclick = ()=>irA(S.paso-1));
+/* ---------- nav pegado ---------- */
+const barraTop = document.getElementById('top');
+addEventListener('scroll', ()=> barraTop.classList.toggle('pegado', scrollY > 40), {passive:true});
 
-function validar(){
-  const p = S.paso;
-  const panel = document.querySelector(`.panel[data-panel="${p}"]`);
-  if(!panel) return;
-  const next = panel.querySelector('[data-next]');
-  if(next){
-    next.disabled = (p===1 && !S.servicio) || (p===2 && !S.especialista)
-                 || (p===3 && !(S.fecha && S.hora));
-  }
-  if(p===3) pintaHoras.__ = 1;
-  const conf = document.getElementById('btnConfirmar');
-  const nom = document.getElementById('fNombre').value.trim();
-  const tel = document.getElementById('fTel').value.replace(/\D/g,'');
-  conf.disabled = !(nom.length>2 && tel.length>=10);
-}
-['fNombre','fTel'].forEach(id=>document.getElementById(id).addEventListener('input',validar));
-
-function fechaLarga(){
-  return new Date(S.fecha+'T12:00:00')
-    .toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'});
-}
-function pintaResumen(){
-  const s = SERVICIOS.find(x=>x.id===S.servicio);
-  const e = ESPECIALISTAS.find(x=>x.id===S.especialista);
-  document.getElementById('resumen').innerHTML = `
-    <div><span>Servicio</span><b>${s.n}</b></div>
-    <div><span>Con</span><b>${e.n}</b></div>
-    <div><span>Cuándo</span><b>${fechaLarga()} · ${S.hora}</b></div>
-    <div><span>Duración</span><b>${s.d} min</b></div>`;
-}
-
-/* ---------- confirmación + QR ---------- */
-let CITA = null;
-document.getElementById('btnConfirmar').onclick = ()=>{
-  const s = SERVICIOS.find(x=>x.id===S.servicio);
-  const e = ESPECIALISTAS.find(x=>x.id===S.especialista);
-  const folio = 'NAHC-' + Math.random().toString(36).slice(2,6).toUpperCase()
-                        + Math.random().toString(36).slice(2,4).toUpperCase();
-  CITA = {
-    folio,
-    nombre: document.getElementById('fNombre').value.trim(),
-    tel:    document.getElementById('fTel').value.trim(),
-    mail:   document.getElementById('fMail').value.trim(),
-    nota:   document.getElementById('fNota').value.trim(),
-    servicio: s.n, dur: s.d, especialista: e.n, fecha: S.fecha, hora: S.hora
-  };
-  // En producción esto viaja al backend; aquí queda local para la demo.
-  try{
-    const prev = JSON.parse(localStorage.getItem('nahc_citas')||'[]');
-    prev.push(CITA); localStorage.setItem('nahc_citas', JSON.stringify(prev));
-  }catch(_){}
-
-  document.getElementById('tkNombre').textContent = CITA.nombre;
-  document.getElementById('tkFolio').textContent = folio;
-  document.getElementById('tkDetalle').innerHTML = `
-    <li><span>Servicio</span><b>${CITA.servicio}</b></li>
-    <li><span>Con</span><b>${CITA.especialista}</b></li>
-    <li><span>Día</span><b>${fechaLarga()}</b></li>
-    <li><span>Hora</span><b>${CITA.hora} · ${CITA.dur} min</b></li>
-    <li><span>A nombre de</span><b>${CITA.nombre}</b></li>`;
-
-  // QR con los datos de la cita
-  const payload = [
-    'NAILS ART & HAIR CARE', 'Folio: '+folio, CITA.servicio,
-    CITA.fecha+' '+CITA.hora, CITA.nombre, 'Tel '+CITA.tel
-  ].join(' | ');
-  const qr = qrcode(0,'M'); qr.addData(payload); qr.make();
-  document.getElementById('qrBox').innerHTML = qr.createImgTag(6,0);
-
-  const msg = `Hola, confirmo mi cita en Nails Art & Hair Care%0A%0AFolio: ${folio}%0A${CITA.servicio}%0A${fechaLarga()} a las ${CITA.hora}%0AA nombre de ${CITA.nombre}`;
-  document.getElementById('tkWa').href = `https://wa.me/${WA}?text=${msg}`;
-
-  irA(5);
-};
-
-/* .ics para agregar al calendario */
-document.getElementById('tkIcs').onclick = ()=>{
-  if(!CITA) return;
-  const dt = s => s.replace(/[-:]/g,'');
-  const ini = new Date(CITA.fecha+'T'+CITA.hora+':00');
-  const fin = new Date(ini.getTime() + CITA.dur*60000);
-  const f = d => dt(d.toISOString().slice(0,19))+'Z';
-  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//NAHC//ES','BEGIN:VEVENT',
-    'UID:'+CITA.folio+'@nailsarthaircare',
-    'DTSTART:'+f(ini), 'DTEND:'+f(fin),
-    'SUMMARY:'+CITA.servicio+' — Nails Art & Hair Care',
-    'LOCATION:ARTZ Pedregal, Anillo Periferico 3720 Local 236, CDMX',
-    'DESCRIPTION:Folio '+CITA.folio+'. Presenta tu QR en recepcion.',
-    'END:VEVENT','END:VCALENDAR'].join('\r\n');
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
-  a.download = CITA.folio+'.ics'; a.click(); URL.revokeObjectURL(a.href);
-};
-
-document.getElementById('tkOtra').onclick = ()=>{
-  S.servicio=S.especialista=S.fecha=S.hora=null;
-  document.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false'));
-  ['fNombre','fTel','fMail','fNota'].forEach(id=>document.getElementById(id).value='');
-  pintaMes(); pintaHoras(); irA(1);
-};
+/* ---------- entrada al scroll ---------- */
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>

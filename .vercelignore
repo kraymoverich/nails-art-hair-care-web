@@ -1,2 +1,4 @@
 propuesta/
 .git/
+.fuente/
+__*.html
