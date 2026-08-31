@@ -1,7 +1,6 @@
-# Mensajes para la gerente — Nails Art & Hair Care
+# Mensajes para Rebeca
 
 Van en este orden, con unos minutos entre cada uno.
-Listos para copiar y pegar.
 
 ---
 
@@ -9,28 +8,23 @@ Listos para copiar y pegar.
 
 Hola Rebeca, buen día. Soy Nicolás.
 
-Estuve viendo Nails Art & Hair Care y me llamó mucho la atención lo que
-tienen armado en ARTZ: el trabajo que publican y que manejen AVEDA, TRUSS
-y K18 no es común.
+Estuve viendo Nails Art & Hair Care y me gustó mucho el trabajo que
+publican. Me puse a hacerles una página, sin compromiso, para que la
+vieran hecha en vez de tener que imaginársela:
 
-Antes de pedirle nada, le construí una página para que la vea funcionando,
-con su marca, sus servicios y sus horarios reales:
+https://nails-art-hair-care.vercel.app
 
-👉 https://nails-art-hair-care.vercel.app
-
-Ábrala desde el celular. Está la carta de servicios, la galería y la agenda
-de la semana con los horarios libres a la vista.
+Ábrala desde el celular. Tiene su logo, sus servicios y sus horarios,
+la galería y una agenda con los espacios libres de la semana.
 
 ---
 
 ## 2 · La propuesta
 
-Le comparto también la propuesta completa en PDF.
+Le dejo también un PDF cortito con lo que hace la página y lo que
+podría hacer más adelante, si les interesa.
 
-Ahí viene lo que encontré de su negocio en internet (hay un par de cosas
-que les están costando clientas sin que se note), y hasta dónde puede
-llegar la página: reserva y pago en línea, membresías y paquetes, y una
-base de datos con todas sus clientas y prospectos.
+Sin prisa, cuando tenga un rato.
 
 [adjuntar Propuesta-Nails-Art-Hair-Care.pdf]
 
@@ -38,10 +32,9 @@ base de datos con todas sus clientas y prospectos.
 
 ## 3 · La llamada
 
-Si le hace sentido, esta semana agendamos un Google Meet de 20 o 30 minutos.
+Si le hace sentido, esta semana nos tomamos veinte minutos por Google Meet.
 
-La idea es entender bien cómo trabajan hoy —cómo llevan las citas, qué se
-les complica, qué les gustaría cobrar en línea— y ajustar la propuesta a
-eso, no al revés.
+Más que para venderle algo, es para entender cómo trabajan hoy y qué se
+les complica, y de ahí ajustar la página a lo que ustedes necesiten.
 
 ¿Le queda mejor en la mañana o por la tarde?
