@@ -1,13 +1,13 @@
 # Mensajes para la gerente — Nails Art & Hair Care
 
 Van en este orden, con unos minutos entre cada uno.
-Reemplaza [NOMBRE] antes de enviar.
+Listos para copiar y pegar.
 
 ---
 
 ## 1 · La página
 
-Hola [NOMBRE], buen día. Soy Nicolás.
+Hola Rebeca, buen día. Soy Nicolás.
 
 Estuve viendo Nails Art & Hair Care y me llamó mucho la atención lo que
 tienen armado en ARTZ: el trabajo que publican y que manejen AVEDA, TRUSS
